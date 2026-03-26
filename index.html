@@ -1,4 +1,6 @@
-<html lang="es"><head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Planificación de Metas 2026 · AGC · Secretaría de Control Público</title>
@@ -9,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://res.cloudinary.com/dthg9wo6r/image/upload/v1773832466/metas_ygwhmi.jpg">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:#f0f2f5; --bg-card:#fff; --bg-alt:#f7f8fa;
@@ -186,7 +188,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:20px 0;}
 }
 </style>
 </head>
-<body data-theme="">
+<body>
 
 <div class="topbar">
   <div class="topbar-left">
@@ -195,7 +197,6 @@ hr.div{border:none;border-top:1px solid var(--border);margin:20px 0;}
   </div>
   <div class="topbar-right">
     <button class="btn-icon" onclick="toggleTheme()" id="themeBtn">🌙 <span class="label">Tema</span></button>
-    <button class="btn-icon" onclick="exportarHTML()">🌐 <span class="label">HTML</span></button>
     <button class="btn-icon" onclick="exportarPDF()">📄 <span class="label">PDF</span></button>
     <button class="btn-icon" onclick="document.getElementById('socialModal').classList.add('open')">📤 <span class="label">Compartir</span></button>
   </div>
@@ -207,7 +208,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:20px 0;}
       <div class="hero-badge">📋 Planificación Estratégica Anual</div>
       <h1>Metas 2026 — Secretaría de Control Público · Municipalidad de Reconquista</h1>
       <div class="hero-meta">
-        <div class="hero-deadline">⏰ Entrega: <strong>24 de marzo de 2026</strong><span class="countdown" id="countdown" style="color: rgb(252, 165, 165);">⚠️ VENCIDO</span></div>
+        <div class="hero-deadline">⏰ Entrega: <strong>24 de marzo de 2026</strong><span class="countdown" id="countdown"></span></div>
         <div class="hero-dest">✉️ <a href="mailto:controlpublico@reconquista.gov.ar">controlpublico@reconquista.gov.ar</a></div>
       </div>
     </div>
@@ -227,10 +228,10 @@ hr.div{border:none;border-top:1px solid var(--border);margin:20px 0;}
 </div>
 
 <div class="stats-row">
-  <div class="stat-card"><div class="stat-num" id="statTotal">10</div><div class="stat-label">Metas registradas</div></div>
-  <div class="stat-card"><div class="stat-num" id="statAreas">1</div><div class="stat-label">Áreas con metas</div></div>
-  <div class="stat-card"><div class="stat-num" id="statPoliticas">5</div><div class="stat-label">Políticas públicas</div></div>
-  <div class="stat-card"><div class="stat-num" id="statLE">3</div><div class="stat-label">Lineamientos cubiertos</div></div>
+  <div class="stat-card"><div class="stat-num" id="statTotal">0</div><div class="stat-label">Metas registradas</div></div>
+  <div class="stat-card"><div class="stat-num" id="statAreas">0</div><div class="stat-label">Áreas con metas</div></div>
+  <div class="stat-card"><div class="stat-num" id="statPoliticas">0</div><div class="stat-label">Políticas públicas</div></div>
+  <div class="stat-card"><div class="stat-num" id="statLE">0</div><div class="stat-label">Lineamientos cubiertos</div></div>
 </div>
 
 <hr class="div">
@@ -238,16 +239,16 @@ hr.div{border:none;border-top:1px solid var(--border);margin:20px 0;}
 <div class="form-section">
   <div class="section-label">Cargar planificación por área</div>
   <div class="area-chips" id="areaChips">
-    <div class="area-chip" data-area="agc" onclick="selectArea('agc')"><span>🏛️</span> AGC — Dirección</div>
+    <div class="area-chip active" data-area="agc" onclick="selectArea('agc')"><span>🏛️</span> AGC — Dirección</div>
     <div class="area-chip" data-area="ig" onclick="selectArea('ig')"><span>🔍</span> Inspección General</div>
-    <div class="area-chip active" data-area="hab" onclick="selectArea('hab')"><span>📄</span> Habilitaciones</div>
+    <div class="area-chip" data-area="hab" onclick="selectArea('hab')"><span>📄</span> Habilitaciones</div>
     <div class="area-chip" data-area="assal" onclick="selectArea('assal')"><span>🛡️</span> ASSAL</div>
     <div class="area-chip" data-area="med" onclick="selectArea('med')"><span>🤝</span> Mediación Comunitaria</div>
   </div>
   <div class="card">
     <div class="card-header">
       <div>
-        <div class="card-title">Nueva política — <span id="formAreaTitle">Habilitaciones</span></div>
+        <div class="card-title">Nueva política — <span id="formAreaTitle">AGC · Dirección</span></div>
         <div class="card-sub">Completá todos los campos. Podés agregar hasta 3 metas por política.</div>
       </div>
     </div>
@@ -293,7 +294,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:20px 0;}
 <div class="metas-section">
   <div class="metas-header">
     <div class="section-label" style="margin:0">Políticas y metas registradas</div>
-    <div class="metas-count" id="metasCount">5 políticas · 10 metas</div>
+    <div class="metas-count" id="metasCount"></div>
   </div>
   <div class="filter-bar">
     <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">Todas</button>
@@ -303,47 +304,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:20px 0;}
     <button class="filter-btn" data-filter="assal" onclick="setFilter('assal')">🛡️ ASSAL</button>
     <button class="filter-btn" data-filter="med" onclick="setFilter('med')">🤝 Mediación</button>
   </div>
-  <div id="politicasList"><div style="margin-top:20px;margin-bottom:4px;"><div style="font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#0c8a6e;display:flex;align-items:center;gap:6px;margin-bottom:10px;"><span>🏛️</span>Dcción. Agcia. Gub. de Control</div><div class="politica-block">
-        <div class="politica-header">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;"><div class="politica-name">Programa Municipal de Fortalecimiento del Cuerpo de Inspectores de la AGCP</div><div class="meta-actions-wrap"><button class="btn btn-ghost btn-sm" onclick="openEditModal(0)">✏️</button><button class="btn btn-danger btn-sm" onclick="deletePolitica(0)">🗑️</button></div></div>
-          <div class="politica-meta-row"><span class="le-badge le-badge-4">LE4 · Cultura Interna de Innovación y Aprendizaje</span><span class="nivel-badge nivel-PROGRAMA">PROGRAMA</span></div>
-          <div class="politica-objetivo"><strong>🎯 Objetivo general 2026–2027</strong>Fortalecer las capacidades técnicas, normativas y procedimentales del cuerpo de inspectores municipales — en las áreas de habilitaciones comerciales, seguridad alimentaria e inspección general — mediante un programa de capacitación continua que acompañe la ampliación de las facultades de poder de policía otorgadas por la reforma de la Ley Orgánica de Municipios, garantizando intervenciones legítimas, eficaces y articuladas con la mediación comunitaria, durante el 2026 y 2027.</div>
-          <div class="linea-base"><strong>📊 Línea de base</strong>Inspección General: 34 — ASSAL: 6 — Habilitaciones: 2 — Parquímetro: 4 — Tránsito: xx</div>
-        </div>
-        <div class="metas-list"><div class="meta-item"><div class="meta-num">1</div><div class="meta-text"><strong>Meta 1 · 2026</strong>El 100% del personal inspector completará el Programa de Capacitación Continua durante el 2026.</div></div></div>
-      </div><div class="politica-block">
-        <div class="politica-header">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;"><div class="politica-name">PROGRAMA: Higiene y saneamiento de los espacios Urbanos</div><div class="meta-actions-wrap"><button class="btn btn-ghost btn-sm" onclick="openEditModal(1)">✏️</button><button class="btn btn-danger btn-sm" onclick="deletePolitica(1)">🗑️</button></div></div>
-          <div class="politica-meta-row"><span class="le-badge le-badge-3">LE3 · Vínculo Ciudadano y Co-Creación</span><span class="nivel-badge nivel-PROGRAMA">PROGRAMA</span></div>
-          <div class="politica-objetivo"><strong>🎯 Objetivo general 2026–2027</strong>Reducir los riesgos sanitarios y mejorar la calidad del espacio urbano mediante la intervención sistemática, preventiva y articulada sobre baldíos y lotes sin uso, a través de programas de desmalezamiento que eliminen focos de proliferación de vectores, acumulación de residuos y deterioro del entorno barrial, promoviendo una ciudad más saludable, segura e inclusiva, durante el 2026 y 2027.</div>
-          <div class="linea-base"><strong>📊 Línea de base</strong>21.000 lotes baldíos en todo el ejido. Anualmente se relevan entre 1.000 y 1.200 en estado de falta de higiene.</div>
-        </div>
-        <div class="metas-list"><div class="meta-item"><div class="meta-num">1</div><div class="meta-text"><strong>Meta 1 · 2026</strong>Desmalezar un mínimo de 800 baldíos durante el 2026, priorizando sectores de alta densidad poblacional y zonas de riesgo sanitario.</div></div></div>
-      </div><div class="politica-block">
-        <div class="politica-header">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;"><div class="politica-name">PROGRAMA: Digitalización y Transparencia de Gestión de Control</div><div class="meta-actions-wrap"><button class="btn btn-ghost btn-sm" onclick="openEditModal(2)">✏️</button><button class="btn btn-danger btn-sm" onclick="deletePolitica(2)">🗑️</button></div></div>
-          <div class="politica-meta-row"><span class="le-badge le-badge-2">LE2 · Transformación Digital y Gobierno Abierto</span><span class="nivel-badge nivel-PROGRAMA">PROGRAMA</span></div>
-          <div class="politica-objetivo"><strong>🎯 Objetivo general 2026–2027</strong>Desarrollar e implementar un Sistema Integrado de Gestión y Transparencia (SIGT) que garantice la trazabilidad completa, la transparencia activa y la eficiencia operativa de los procesos de control municipal en las actividades de la Agencia, asegurando el acceso público diferenciado a la información de gestión durante el período 2026–2027.</div>
-          <div class="linea-base"><strong>📊 Línea de base</strong>Actualmente se cuenta con los siguientes microsistemas cerrados (non-sql): 1. Sistema de seguimiento de control de baldíos. 2. Panel de Control o de Tareas (en desarrollo para su alojamiento en hosting on-line). 3. Mediación Comunitaria: Seguimiento de Expedientes de mediación. 4. Administración: Seguimiento de actas de infracción y estado de los mismos.</div>
-        </div>
-        <div class="metas-list"><div class="meta-item"><div class="meta-num">1</div><div class="meta-text"><strong>Meta 1 · 2026</strong>Implementar el módulo central del SIGT que articule todos los microsistemas, conservando la identidad y lógica propia de cada uno durante el segundo semestre del 2026.</div></div><div class="meta-item"><div class="meta-num">2</div><div class="meta-text"><strong>Meta 2 · 2026</strong>Publicar en el portal municipal la versión pública del SIGT, garantizando el acceso abierto e irrestricto a la ciudadanía, durante Noviembre de 2026.</div></div></div>
-      </div><div class="politica-block">
-        <div class="politica-header">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;"><div class="politica-name">Programa de Anticipación Institucional ante Escenarios Críticos — Sala de Escenarios Críticos y Anticipación de Riesgos</div><div class="meta-actions-wrap"><button class="btn btn-ghost btn-sm" onclick="openEditModal(3)">✏️</button><button class="btn btn-danger btn-sm" onclick="deletePolitica(3)">🗑️</button></div></div>
-          <div class="politica-meta-row"><span class="le-badge le-badge-4">LE4 · Cultura Interna de Innovación y Aprendizaje</span><span class="nivel-badge nivel-PROGRAMA">PROGRAMA</span></div>
-          <div class="politica-objetivo"><strong>🎯 Objetivo general 2026–2027</strong>Desarrollar una capacidad institucional sostenida de anticipación y análisis de escenarios críticos de alta complejidad en el ámbito de actuación de la Agencia, mediante la simulación sistemática de situaciones extremas o de baja probabilidad que puedan comprometer la operatividad municipal, el orden público o la seguridad urbana, con el fin de reducir la improvisación, fortalecer la toma de decisiones y construir una cultura organizacional orientada a la prevención y la resiliencia, durante el período 2026–2027.</div>
-          
-        </div>
-        <div class="metas-list"><div class="meta-item"><div class="meta-num">1</div><div class="meta-text"><strong>Meta 1 · 2026</strong>Realizar 4 jornadas de simulación en la Sala de Escenarios Críticos durante el 2026, sobre los casos del catálogo, con participación obligatoria de los jefes de área. Cada jornada considerará la presentación del escenario, análisis en grupos, identificación de decisiones críticas, debate de respuestas posibles y registro de conclusiones.</div></div><div class="meta-item"><div class="meta-num">2</div><div class="meta-text"><strong>Meta 2 · 2026</strong>Elaborar al menos 5 protocolos preliminares de actuación interna derivados directamente de los análisis realizados, con foco exclusivo en el rol de la AGC. Cada protocolo debe especificar: activador del protocolo, acciones inmediatas del personal, cadena de comunicación interna, decisiones que no deben tomarse sin autorización superior y registro del evento.</div></div><div class="meta-item"><div class="meta-num">3</div><div class="meta-text"><strong>Meta 3 · 2026</strong>Iniciar, a fines del 2026, negociaciones formales de coordinación con otros organismos de seguridad y emergencia, respaldada por protocolos propios consolidados y un conocimiento preciso de su rol, sus límites y sus necesidades ante escenarios críticos.</div></div></div>
-      </div><div class="politica-block">
-        <div class="politica-header">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;"><div class="politica-name">PLAN de Gestión Inteligente y Despapelización Integral. (SISTEMA DE JUZGAMIENTO DE FALTAS CORRESPONDIENTES A LA AGC)</div><div class="meta-actions-wrap"><button class="btn btn-ghost btn-sm" onclick="openEditModal(4)">✏️</button><button class="btn btn-danger btn-sm" onclick="deletePolitica(4)">🗑️</button></div></div>
-          <div class="politica-meta-row"><span class="le-badge le-badge-2">LE2 · Transformación Digital y Gobierno Abierto</span><span class="nivel-badge nivel-PLAN">PLAN</span></div>
-          <div class="politica-objetivo"><strong>🎯 Objetivo general 2026–2027</strong>Transformar el actual sistema de registro de expedientes en un Procedimiento Administrativo Digital de Extremo a Extremo (E2E). El objetivo es que la gestión de infracciones, desde la labranza del acta en vía pública hasta la ejecución de la sentencia o cobro, nazca, circule y se archive de forma electrónica, eliminando el soporte físico y garantizando la interoperabilidad con los sistemas de recaudación.</div>
-          <div class="linea-base"><strong>📊 Línea de base</strong>Sistema "Espejo": No es un expediente digital, sino un registro de carga manual de lo que ya sucedió en papel. Capacidad Limitada: Solo genera dos tipos de documentos (cédulas y resoluciones). Inexistencia de Adjuntos: Imposibilidad de vincular evidencia digital (fotos, audios, actas escaneadas). Fragmentación Financiera: El sistema de registro no "habla" con el sistema de cobros, generando baches en la información de pagos.</div>
-        </div>
-        <div class="metas-list"><div class="meta-item"><div class="meta-num">1</div><div class="meta-text"><strong>Meta 1 · 2026</strong>FASE 1 — Cimientos y Acta Digital (plazo: 8 meses). Meta 1: Desarrollo o implementación del Módulo de Acta Digital. Los inspectores dejan de usar talonarios físicos y utilizan dispositivos móviles para cargar actas que impactan en tiempo real. Meta 2: Habilitación de la Carga de Multimedia. Modificación del sistema para permitir adjuntar archivos (fotos de la infracción, pruebas) que actúen como prueba documental del expediente.</div></div><div class="meta-item"><div class="meta-num">2</div><div class="meta-text"><strong>Meta 2 · 2026</strong>FASE 2 — El Flujo Electrónico (Meta 2027). Meta 3: Implementación del Workflow Digital. El expediente deja de ser un registro manual y pasa a ser un flujo de tareas. Meta 4: Automatización de Plantillas (Preformateado): biblioteca de resoluciones y dictámenes preconfigurados que tomen los datos del acta automáticamente, reduciendo el error humano y los tiempos de redacción en un 60%. Meta 5: Firma Digital/Electrónica. Integración de firma con validez legal para todos los agentes y funcionarios intervinientes.</div></div><div class="meta-item"><div class="meta-num">3</div><div class="meta-text"><strong>Meta 3 · 2026</strong>FASE 3 — Interoperabilidad y Cierre de Ciclo (finales de 2026 / 2027). Meta 6: Conexión con el Sistema de Cobro. Sincronización vía API entre el sistema de la AGC y el sistema financiero del municipio. Meta 7: Notificación Electrónica y Domicilio Vial Digital. Implementación de notificaciones vía e-mail o app que tengan la misma validez que la cédula de citación en papel.</div></div></div>
-      </div></div></div>
+  <div id="politicasList"></div>
 </div>
 
 </div><!-- /container -->
@@ -453,20 +414,28 @@ const DEFAULT=[
    metas:[
      'FASE 1 — Cimientos y Acta Digital (plazo: 8 meses). Meta 1: Desarrollo o implementación del Módulo de Acta Digital. Los inspectores dejan de usar talonarios físicos y utilizan dispositivos móviles para cargar actas que impactan en tiempo real. Meta 2: Habilitación de la Carga de Multimedia. Modificación del sistema para permitir adjuntar archivos (fotos de la infracción, pruebas) que actúen como prueba documental del expediente.',
      'FASE 2 — El Flujo Electrónico (Meta 2027). Meta 3: Implementación del Workflow Digital. El expediente deja de ser un registro manual y pasa a ser un flujo de tareas. Meta 4: Automatización de Plantillas (Preformateado): biblioteca de resoluciones y dictámenes preconfigurados que tomen los datos del acta automáticamente, reduciendo el error humano y los tiempos de redacción en un 60%. Meta 5: Firma Digital/Electrónica. Integración de firma con validez legal para todos los agentes y funcionarios intervinientes.',
-     'FASE 3 — Interoperabilidad y Cierre de Ciclo (finales de 2026 / 2027). Meta 6: Conexión con el Sistema de Cobro. Sincronización vía API entre el sistema de la AGC y el sistema financiero del municipio. Meta 7: Notificación Electrónica y Domicilio Vial Digital. Implementación de notificaciones vía e-mail o app que tengan la misma validez que la cédula de citación en papel.']}
+     'FASE 3 — Interoperabilidad y Cierre de Ciclo (finales de 2026 / 2027). Meta 6: Conexión con el Sistema de Cobro. Sincronización vía API entre el sistema de la AGC y el sistema financiero del municipio. Meta 7: Notificación Electrónica y Domicilio Vial Digital. Implementación de notificaciones vía e-mail o app que tengan la misma validez que la cédula de citación en papel.']},
+
+  {area:'agc',le:'3',nivel:'PROGRAMA',
+   politica:'PROGRAMA: Difusión de actividades AGC INSPECCIÓN HABILITACIONES',
+   objetivo:'Crear una página web en la cual se informarán hechos y/o actividades relevantes de interés público a efectos de poner en conocimiento de la comunidad las diferentes intervenciones que se realizan por parte de los organismos AGC, INSPECCIÓN y HABILITACIONES y crear conciencia en la comunidad que existe control sobre uso de espacios públicos, actividades comerciales, obras, servicios y todo lo vinculado a las áreas mencionadas. Ej. Se interviene en espacio público reubicando vendedores ambulantes que realizan su actividad en espacio público no habilitado. Ej. 2: "Se retienen 7 caballos sueltos en la vía pública en inmediaciones de...".',
+   lineaBase:'No tenemos actualmente un canal de comunicación nativo propio.',
+   metas:[
+     'Crear la página web, formato noticias, sencilla, secuencial, durante el 2026.',
+     'Publicar un mínimo de dos noticias por semana que sean de relevancia e interés público, de manera sostenida durante el 2026.']}
 ];
 
 let politicas=[], currentArea='agc', currentFilter='all', editingIndex=-1;
 
 function init(){
-  const s=localStorage.getItem('agc_plan_v4');
+  const s=localStorage.getItem('agc_plan_v5');
   politicas=s?JSON.parse(s):[...DEFAULT];
   if(!s)save();
   updateCountdown();render();updateStats();
   const th=localStorage.getItem('agc_theme');
   if(th==='dark'){document.body.setAttribute('data-theme','dark');document.getElementById('themeBtn').innerHTML='☀️ <span class="label">Tema</span>';}
 }
-function save(){localStorage.setItem('agc_plan_v4',JSON.stringify(politicas));}
+function save(){localStorage.setItem('agc_plan_v5',JSON.stringify(politicas));}
 function selectArea(a){currentArea=a;document.querySelectorAll('.area-chip').forEach(c=>c.classList.toggle('active',c.dataset.area===a));document.getElementById('formAreaTitle').textContent=AREAS[a].short;limpiarForm();}
 function setFilter(f){currentFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter===f));render();}
 
@@ -588,36 +557,36 @@ function exportarPDF(){
     const lc=LE_PDF[p.le]||LE_PDF['1'];
     const nc=NV_C[p.nivel]||'#666';
     const metasH=p.metas.map((m,i)=>`
-      <div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:9px;">
-        <div style="min-width:22px;height:22px;border-radius:50%;background:#e8f6f1;color:#076b55;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${i+1}</div>
-        <div><div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#0c8a6e;margin-bottom:2px;">Meta ${i+1} · 2026</div><div style="font-size:12px;color:#1a1d24;line-height:1.65;">${m}</div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;">
+        <div style="min-width:26px;height:26px;border-radius:50%;background:#e8f6f1;color:#076b55;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${i+1}</div>
+        <div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#0c8a6e;margin-bottom:3px;">Meta ${i+1} · 2026</div><div style="font-size:13.5px;color:#1a1d24;line-height:1.7;">${m}</div></div>
       </div>`).join('');
-    const lbH=p.lineaBase?`<div style="background:#f5f3ff;border-left:3px solid #7c3aed;border-radius:0 6px 6px 0;padding:8px 12px;margin-top:7px;">
-        <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#7c3aed;margin-bottom:3px;">📊 Línea de base</div>
-        <div style="font-size:11.5px;color:#374151;line-height:1.6;">${p.lineaBase}</div></div>`:'';
+    const lbH=p.lineaBase?`<div style="background:#f5f3ff;border-left:3px solid #7c3aed;border-radius:0 6px 6px 0;padding:10px 14px;margin-top:8px;">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#7c3aed;margin-bottom:4px;">📊 Línea de base</div>
+        <div style="font-size:13px;color:#374151;line-height:1.65;">${p.lineaBase}</div></div>`:'';
 
     pHTML+=`
-    <div style="break-inside:avoid;page-break-inside:avoid;margin-bottom:22px;border:1px solid #e1e5eb;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-      <div style="background:${lc.bg};border-bottom:2px solid ${lc.border};padding:15px 20px 13px;">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
-          <div style="font-size:13.5px;font-weight:700;color:#1a1d24;line-height:1.35;flex:1;">${p.politica}</div>
-          <div style="font-size:10px;font-weight:700;color:#fff;background:${nc};padding:3px 9px;border-radius:5px;white-space:nowrap;flex-shrink:0;">${p.nivel}</div>
+    <div style="break-inside:avoid;page-break-inside:avoid;margin-bottom:26px;border:1px solid #e1e5eb;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);">
+      <div style="background:${lc.bg};border-bottom:2px solid ${lc.border};padding:18px 22px 15px;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:10px;">
+          <div style="font-size:15.5px;font-weight:700;color:#1a1d24;line-height:1.35;flex:1;">${p.politica}</div>
+          <div style="font-size:11px;font-weight:700;color:#fff;background:${nc};padding:4px 11px;border-radius:5px;white-space:nowrap;flex-shrink:0;">${p.nivel}</div>
         </div>
-        <div style="display:inline-flex;align-items:center;background:${lc.border}33;color:${lc.text};border:1px solid ${lc.border};border-radius:5px;padding:2px 8px;font-size:10px;font-weight:700;">LE${p.le} · ${LE_NAMES[p.le]}</div>
-        <div style="background:rgba(255,255,255,.75);border-radius:6px;padding:9px 12px;margin-top:9px;">
-          <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#6b7280;margin-bottom:3px;">🎯 Objetivo general 2026–2027</div>
-          <div style="font-size:12px;color:#374151;line-height:1.65;">${p.objetivo}</div>
+        <div style="display:inline-flex;align-items:center;background:${lc.border}33;color:${lc.text};border:1px solid ${lc.border};border-radius:5px;padding:3px 10px;font-size:11px;font-weight:700;">LE${p.le} · ${LE_NAMES[p.le]}</div>
+        <div style="background:rgba(255,255,255,.78);border-radius:6px;padding:11px 14px;margin-top:10px;">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#6b7280;margin-bottom:4px;">🎯 Objetivo general 2026–2027</div>
+          <div style="font-size:13.5px;color:#374151;line-height:1.7;">${p.objetivo}</div>
         </div>
         ${lbH}
       </div>
-      <div style="padding:13px 20px 11px;background:#fff;">${metasH}</div>
+      <div style="padding:16px 22px 13px;background:#fff;">${metasH}</div>
     </div>`;
   });
 
   const totalMetas=politicas.reduce((s,p)=>s+p.metas.length,0);
   const statsH=['Metas registradas|'+totalMetas,'Áreas con metas|'+new Set(politicas.map(p=>p.area)).size,'Políticas públicas|'+politicas.length,'Lineamientos cubiertos|'+new Set(politicas.map(p=>p.le)).size].map(s=>{
     const[label,val]=s.split('|');
-    return `<div style="background:#f0f2f5;border:1px solid #e1e5eb;border-radius:10px;padding:13px;text-align:center;"><div style="font-size:26px;font-weight:700;color:#0c8a6e;font-family:'DM Serif Display',serif;">${val}</div><div style="font-size:10px;color:#5f6b7a;margin-top:2px;">${label}</div></div>`;
+    return `<div style="background:#f0f2f5;border:1px solid #e1e5eb;border-radius:10px;padding:14px;text-align:center;"><div style="font-size:30px;font-weight:700;color:#0c8a6e;font-family:'DM Serif Display',serif;">${val}</div><div style="font-size:12px;color:#5f6b7a;margin-top:3px;">${label}</div></div>`;
   }).join('');
 
   const html=`<!DOCTYPE html>
@@ -625,7 +594,7 @@ function exportarPDF(){
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'DM Sans',sans-serif;color:#1a1d24;background:#fff;font-size:13px;}
+body{font-family:'DM Sans',sans-serif;color:#1a1d24;background:#fff;font-size:14px;}
 @media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.no-print{display:none!important;}@page{margin:16mm 14mm;size:A4;}}
 </style></head><body>
 
@@ -649,12 +618,12 @@ body{font-family:'DM Sans',sans-serif;color:#1a1d24;background:#fff;font-size:13
 </div>
 
 <div style="padding:0 40px;margin-bottom:24px;">
-  <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9aa5b4;margin-bottom:10px;">Lineamientos Estratégicos 2026–2027</div>
+  <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9aa5b4;margin-bottom:10px;">Lineamientos Estratégicos 2026–2027</div>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
-    <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:10px 12px;"><div style="width:20px;height:20px;border-radius:5px;background:#2563eb;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:4px;">1</div><div style="font-size:10.5px;font-weight:700;color:#1e40af;line-height:1.4;">Modernización Interna y Fortalecimiento Institucional</div></div>
-    <div style="background:#f5f3ff;border:1px solid #ddd6fe;border-radius:8px;padding:10px 12px;"><div style="width:20px;height:20px;border-radius:5px;background:#7c3aed;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:4px;">2</div><div style="font-size:10.5px;font-weight:700;color:#5b21b6;line-height:1.4;">Transformación Digital y Gobierno Abierto</div></div>
-    <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:10px 12px;"><div style="width:20px;height:20px;border-radius:5px;background:#ea580c;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:4px;">3</div><div style="font-size:10.5px;font-weight:700;color:#9a3412;line-height:1.4;">Vínculo Ciudadano y Co-Creación</div></div>
-    <div style="background:#ecfeff;border:1px solid #a5f3fc;border-radius:8px;padding:10px 12px;"><div style="width:20px;height:20px;border-radius:5px;background:#0891b2;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:4px;">4</div><div style="font-size:10.5px;font-weight:700;color:#0e7490;line-height:1.4;">Cultura Interna de Innovación y Aprendizaje</div></div>
+    <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:11px 13px;"><div style="width:22px;height:22px;border-radius:5px;background:#2563eb;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:5px;">1</div><div style="font-size:11.5px;font-weight:700;color:#1e40af;line-height:1.4;">Modernización Interna y Fortalecimiento Institucional</div></div>
+    <div style="background:#f5f3ff;border:1px solid #ddd6fe;border-radius:8px;padding:11px 13px;"><div style="width:22px;height:22px;border-radius:5px;background:#7c3aed;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:5px;">2</div><div style="font-size:11.5px;font-weight:700;color:#5b21b6;line-height:1.4;">Transformación Digital y Gobierno Abierto</div></div>
+    <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:11px 13px;"><div style="width:22px;height:22px;border-radius:5px;background:#ea580c;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:5px;">3</div><div style="font-size:11.5px;font-weight:700;color:#9a3412;line-height:1.4;">Vínculo Ciudadano y Co-Creación</div></div>
+    <div style="background:#ecfeff;border:1px solid #a5f3fc;border-radius:8px;padding:11px 13px;"><div style="width:22px;height:22px;border-radius:5px;background:#0891b2;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:5px;">4</div><div style="font-size:11.5px;font-weight:700;color:#0e7490;line-height:1.4;">Cultura Interna de Innovación y Aprendizaje</div></div>
   </div>
 </div>
 
@@ -663,7 +632,7 @@ body{font-family:'DM Sans',sans-serif;color:#1a1d24;background:#fff;font-size:13
 </div>
 
 <div style="padding:0 40px;margin-bottom:20px;border-top:2px solid rgba(12,138,110,.25);padding-top:20px;">
-  <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9aa5b4;margin-bottom:16px;">🏛️ Dirección — Agencia Gubernamental de Control Público (AGC)</div>
+  <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9aa5b4;margin-bottom:16px;">🏛️ Dirección — Agencia Gubernamental de Control Público (AGC)</div>
   ${pHTML}
 </div>
 
@@ -684,6 +653,5 @@ body{font-family:'DM Sans',sans-serif;color:#1a1d24;background:#fff;font-size:13
 
 init();
 </script>
-
-
-</body></html>
+</body>
+</html>
