@@ -1,655 +1,395 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Planificación de Metas 2026 · AGC · Secretaría de Control Público</title>
-<link rel="icon" href="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866260/logoagc_jkb5my.jpg" type="image/jpeg">
-<meta property="og:title" content="Planificación de Metas 2026 · AGC · Municipalidad de Reconquista">
-<meta property="og:description" content="Planificación estratégica de metas anuales 2026 — Agencia Gubernamental de Control Público · Secretaría de Control Público · Municipalidad de Reconquista">
-<meta property="og:image" content="https://res.cloudinary.com/dthg9wo6r/image/upload/v1773832466/metas_ygwhmi.jpg">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://res.cloudinary.com/dthg9wo6r/image/upload/v1773832466/metas_ygwhmi.jpg">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg:#f0f2f5; --bg-card:#fff; --bg-alt:#f7f8fa;
-  --text:#1a1d24; --text-muted:#5f6b7a; --text-light:#9aa5b4; --border:#e1e5eb;
-  --accent:#0c8a6e; --accent-light:#e8f6f1; --accent-dark:#076b55;
-  --le1:#2563eb; --le1-bg:#eff6ff; --le1-border:#bfdbfe;
-  --le2:#7c3aed; --le2-bg:#f5f3ff; --le2-border:#ddd6fe;
-  --le3:#ea580c; --le3-bg:#fff7ed; --le3-border:#fed7aa;
-  --le4:#0891b2; --le4-bg:#ecfeff; --le4-border:#a5f3fc;
-  --shadow-sm:0 1px 3px rgba(0,0,0,.07); --shadow-md:0 4px 14px rgba(0,0,0,.09);
-  --radius:10px; --radius-lg:16px;
-  --font:'DM Sans',sans-serif; --font-display:'DM Serif Display',serif;
-}
-[data-theme="dark"]{
-  --bg:#111318; --bg-card:#1a1e26; --bg-alt:#1e2230;
-  --text:#e8ecf1; --text-muted:#8a96a6; --text-light:#5f6b7a; --border:#2a2f3d;
-  --le1-bg:#1e2a4a; --le1-border:#2d4080; --le2-bg:#271e42; --le2-border:#4c3580;
-  --le3-bg:#3a1f0a; --le3-border:#7a3a10; --le4-bg:#0a2535; --le4-border:#1a5070;
-  --accent-light:#0a2a22;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;transition:background .3s,color .3s;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Metadatos para Redes Sociales (Open Graph) -->
+    <meta property="og:title" content="Portal de Sistemas | Agencia Gubernamental de Control">
+    <meta property="og:description" content="Panel o menú principal de sistemas de la Agencia Gubernamental de Control para uso interno. Gestión de reuniones, minutas y tareas.">
+    <meta property="og:image" content="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866260/logoagc_jkb5my.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta name="twitter:card" content="summary_large_image">
 
-/* TOPBAR */
-.topbar{position:sticky;top:0;z-index:100;background:#0f4c3a;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:44px;box-shadow:0 2px 8px rgba(0,0,0,.25);}
-.topbar-left{display:flex;align-items:center;gap:10px;}
-.topbar-logo{height:26px;width:26px;border-radius:5px;object-fit:cover;}
-.topbar-title{color:#fff;font-weight:600;font-size:12.5px;}
-.topbar-title span{color:#6ee7c7;}
-.topbar-right{display:flex;align-items:center;gap:6px;}
-.btn-icon{background:rgba(255,255,255,.12);border:none;color:#fff;height:30px;padding:0 10px;border-radius:7px;cursor:pointer;font-size:12px;display:inline-flex;align-items:center;gap:5px;font-family:var(--font);font-weight:600;transition:background .2s;white-space:nowrap;}
-.btn-icon:hover{background:rgba(255,255,255,.22);}
+    <!-- Favicon -->
+    <link rel="icon" href="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866260/logoagc_jkb5my.jpg" type="image/jpeg">
 
-/* HERO compact */
-.hero{background:linear-gradient(135deg,#0f4c3a 0%,#0c8a6e 65%,#10b98e 100%);padding:20px 24px 18px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");}
-.hero-inner{max-width:900px;margin:0 auto;position:relative;display:flex;align-items:center;gap:20px;}
-.hero-text{flex:1;}
-.hero-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.15);color:#e0faf3;border:1px solid rgba(255,255,255,.2);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:500;margin-bottom:7px;}
-.hero h1{font-family:var(--font-display);color:#fff;font-size:22px;line-height:1.2;margin-bottom:8px;}
-.hero-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
-.hero-deadline{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:5px 12px;border-radius:7px;color:rgba(255,255,255,.9);font-size:12px;}
-.hero-deadline strong{color:#fff;}
-.countdown{background:rgba(255,220,0,.2);color:#ffe566;padding:1px 7px;border-radius:10px;font-size:10px;font-weight:700;}
-.hero-dest{color:rgba(255,255,255,.7);font-size:11.5px;}
-.hero-dest a{color:#6ee7c7;text-decoration:none;}
+    <title>Portal AGC - Sistemas</title>
 
-/* CONTAINER */
-.container{max-width:900px;margin:0 auto;padding:0 24px 60px;}
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        vino: {
+                            400: '#a34a58',
+                            500: '#8b2e3e',
+                            600: '#721f2d',
+                            700: '#5a1520',
+                            800: '#420d15',
+                            900: '#2a050a',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
 
-/* LE SECTION */
-.le-section{margin-top:22px;}
-.section-label{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
-.le-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
-.le-card{border-radius:var(--radius);padding:11px 13px;border:1px solid;display:flex;gap:10px;align-items:flex-start;}
-.le-1{background:var(--le1-bg);border-color:var(--le1-border);}
-.le-2{background:var(--le2-bg);border-color:var(--le2-border);}
-.le-3{background:var(--le3-bg);border-color:var(--le3-border);}
-.le-4{background:var(--le4-bg);border-color:var(--le4-border);}
-.le-num{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;}
-.le-1 .le-num{background:var(--le1);}
-.le-2 .le-num{background:var(--le2);}
-.le-3 .le-num{background:var(--le3);}
-.le-4 .le-num{background:var(--le4);}
-.le-content h4{font-size:11.5px;font-weight:700;color:var(--text);margin-bottom:2px;}
-.le-content p{font-size:10.5px;color:var(--text-muted);line-height:1.5;}
+    <style>
+        /* Estilos personalizados para efectos Glassmorphism y scroll */
+        body {
+            background-color: #1a0508; /* Fondo base muy oscuro */
+            color: #ffffff;
+            overflow-x: hidden;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
 
-/* STATS */
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px;}
-.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:13px;text-align:center;}
-.stat-num{font-size:26px;font-weight:700;color:var(--accent);font-family:var(--font-display);}
-.stat-label{font-size:10.5px;color:var(--text-muted);margin-top:2px;}
+        .glass-header {
+            background: rgba(42, 5, 10, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-/* FORM */
-.form-section{margin-top:22px;}
-.area-chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px;}
-.area-chip{display:flex;align-items:center;gap:6px;padding:6px 13px;border-radius:20px;border:2px solid var(--border);background:var(--bg-card);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;color:var(--text-muted);}
-.area-chip:hover{border-color:var(--accent);color:var(--accent);}
-.area-chip.active{background:var(--accent-light);border-color:var(--accent);color:var(--accent-dark);}
-.card{background:var(--bg-card);border-radius:var(--radius-lg);border:1px solid var(--border);padding:20px;box-shadow:var(--shadow-sm);}
-.card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
-.card-title{font-size:14px;font-weight:700;}
-.card-sub{font-size:11px;color:var(--text-muted);margin-top:2px;}
-.form-group{margin-bottom:13px;}
-.form-label{display:block;font-size:11px;font-weight:700;margin-bottom:5px;color:var(--text-muted);letter-spacing:.02em;text-transform:uppercase;}
-.form-control{width:100%;padding:9px 13px;border-radius:8px;border:1.5px solid var(--border);background:var(--bg-alt);color:var(--text);font-family:var(--font);font-size:13px;line-height:1.5;transition:border-color .2s,box-shadow .2s;resize:vertical;}
-.form-control:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(12,138,110,.12);}
-.form-control::placeholder{color:var(--text-light);}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+        .glass-card {
+            background: linear-gradient(145deg, rgba(114, 31, 45, 0.4) 0%, rgba(42, 5, 10, 0.8) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-/* BADGES */
-.le-badge{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:5px;white-space:nowrap;}
-.le-badge-1{background:var(--le1-bg);color:var(--le1);border:1px solid var(--le1-border);}
-.le-badge-2{background:var(--le2-bg);color:var(--le2);border:1px solid var(--le2-border);}
-.le-badge-3{background:var(--le3-bg);color:var(--le3);border:1px solid var(--le3-border);}
-.le-badge-4{background:var(--le4-bg);color:var(--le4);border:1px solid var(--le4-border);}
-.nivel-badge{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:5px;color:#fff;}
-.nivel-PROGRAMA{background:#0c8a6e;}
-.nivel-PLAN{background:#2563eb;}
-.nivel-PROYECTO{background:#7c3aed;}
+        .glass-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 40px 0 rgba(163, 74, 88, 0.4);
+        }
 
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:8px;font-family:var(--font);font-size:12.5px;font-weight:600;cursor:pointer;border:none;transition:all .2s;}
-.btn-primary{background:var(--accent);color:#fff;}
-.btn-primary:hover{background:var(--accent-dark);}
-.btn-ghost{background:transparent;color:var(--text-muted);border:1.5px solid var(--border);}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
-.btn-sm{padding:4px 9px;font-size:11px;border-radius:5px;}
-.btn-danger{background:transparent;color:#dc2626;border:1.5px solid #fca5a5;}
-.btn-danger:hover{background:#fef2f2;}
-.btn-group{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap;}
+        /* Ocultar scrollbar pero permitir scroll */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a0508;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #721f2d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a34a58;
+        }
 
-/* POLÍTICA BLOCKS */
-.metas-section{margin-top:20px;}
-.metas-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-.metas-count{font-size:11.5px;color:var(--text-muted);}
-.politica-block{margin-bottom:16px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);}
-.politica-header{background:var(--bg-card);border-bottom:2px solid var(--accent);padding:14px 18px 12px;}
-.politica-name{font-size:13.5px;font-weight:700;margin-bottom:7px;line-height:1.35;}
-.politica-meta-row{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:8px;}
-.politica-objetivo{font-size:12.5px;color:var(--text-muted);line-height:1.65;padding:8px 12px;background:var(--bg-alt);border-radius:6px;margin-top:6px;}
-.politica-objetivo strong{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-light);display:block;margin-bottom:3px;}
-.linea-base{font-size:12px;color:var(--text-muted);line-height:1.6;padding:8px 12px;background:var(--le2-bg);border-radius:6px;margin-top:6px;border-left:3px solid var(--le2);}
-.linea-base strong{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--le2);display:block;margin-bottom:3px;}
-.metas-list{background:var(--bg-card);}
-.meta-item{padding:11px 18px;border-top:1px solid var(--border);display:flex;gap:11px;align-items:flex-start;}
-.meta-item:first-child{border-top:none;}
-.meta-num{width:21px;height:21px;border-radius:50%;background:var(--accent-light);color:var(--accent-dark);font-size:11px;font-weight:700;display:grid;place-items:center;flex-shrink:0;margin-top:1px;}
-.meta-text{flex:1;font-size:13px;color:var(--text);line-height:1.65;}
-.meta-text strong{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--accent);display:block;margin-bottom:2px;}
-.meta-actions-wrap{display:flex;gap:5px;flex-shrink:0;}
+        /* Canvas de fondo */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
 
-/* FILTER */
-.filter-bar{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px;}
-.filter-btn{padding:4px 11px;border-radius:14px;border:1.5px solid var(--border);background:none;color:var(--text-muted);font-family:var(--font);font-size:11px;font-weight:600;cursor:pointer;transition:all .2s;}
-.filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;}
-
-hr.div{border:none;border-top:1px solid var(--border);margin:20px 0;}
-
-.info-box{background:var(--le2-bg);border:1px solid var(--le2-border);border-radius:var(--radius);padding:11px 15px;margin-top:14px;font-size:12px;color:var(--text-muted);line-height:1.7;}
-.info-box strong{color:var(--le2);}
-.empty-state{text-align:center;padding:44px 20px;color:var(--text-light);}
-.empty-state .icon{font-size:32px;margin-bottom:10px;}
-
-/* FOOTER */
-.page-footer{border-top:1px solid var(--border);margin-top:44px;padding:20px 24px 16px;max-width:900px;margin-left:auto;margin-right:auto;}
-.footer-logos{display:flex;align-items:center;gap:18px;justify-content:center;margin-bottom:12px;}
-.footer-logos img{height:38px;opacity:.65;object-fit:contain;}
-[data-theme="dark"] .footer-logos img{filter:brightness(0) invert(.8);}
-.footer-text{text-align:center;font-size:11px;color:var(--text-light);line-height:1.8;}
-.footer-text a{color:var(--accent);text-decoration:none;font-weight:600;}
-
-/* MODALS */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:300;display:none;align-items:center;justify-content:center;padding:20px;}
-.modal-overlay.open{display:flex;}
-.modal{background:var(--bg-card);border-radius:var(--radius-lg);padding:24px;max-width:480px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.25);}
-.modal h3{font-size:15px;font-weight:700;margin-bottom:5px;}
-.modal-sub{font-size:12px;color:var(--text-muted);margin-bottom:16px;line-height:1.6;}
-.modal-close{float:right;background:none;border:none;font-size:20px;color:var(--text-muted);cursor:pointer;}
-.edit-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:400;display:none;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto;}
-.edit-modal-overlay.open{display:flex;}
-.edit-modal{background:var(--bg-card);border-radius:var(--radius-lg);padding:24px;max-width:600px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.3);margin:auto;}
-
-@media(max-width:680px){
-  .le-grid,.stats-row{grid-template-columns:1fr 1fr;}
-  .form-row{grid-template-columns:1fr;}
-  .container{padding:0 14px 48px;}
-  .hero h1{font-size:18px;}
-  .topbar-right .btn-icon span.label{display:none;}
-}
-@media print{
-  .topbar,.hero,.le-section,.stats-row,.form-section,.filter-bar,.metas-header,.meta-actions-wrap,.btn-group,.info-box,.page-footer{display:none!important;}
-  body{background:#fff;}
-}
-</style>
+        /* Animación de entrada principal */
+        #main-content {
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+    </style>
 </head>
-<body>
+<body class="antialiased selection:bg-vino-500 selection:text-white">
 
-<div class="topbar">
-  <div class="topbar-left">
-    <img src="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866260/logoagc_jkb5my.jpg" alt="AGC" class="topbar-logo">
-    <span class="topbar-title"><span>AGC</span> · Planificación de Metas 2026</span>
-  </div>
-  <div class="topbar-right">
-    <button class="btn-icon" onclick="toggleTheme()" id="themeBtn">🌙 <span class="label">Tema</span></button>
-    <button class="btn-icon" onclick="exportarPDF()">📄 <span class="label">PDF</span></button>
-    <button class="btn-icon" onclick="document.getElementById('socialModal').classList.add('open')">📤 <span class="label">Compartir</span></button>
-  </div>
-</div>
-
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-badge">📋 Planificación Estratégica Anual</div>
-      <h1>Metas 2026 — Secretaría de Control Público · Municipalidad de Reconquista</h1>
-      <div class="hero-meta">
-        <div class="hero-deadline">⏰ Entrega: <strong>24 de marzo de 2026</strong><span class="countdown" id="countdown"></span></div>
-        <div class="hero-dest">✉️ <a href="mailto:controlpublico@reconquista.gov.ar">controlpublico@reconquista.gov.ar</a></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-
-<div class="le-section">
-  <div class="section-label">Lineamientos Estratégicos 2026–2027</div>
-  <div class="le-grid">
-    <div class="le-card le-1"><div class="le-num">1</div><div class="le-content"><h4>Modernización Interna y Fortalecimiento Institucional</h4><p>Reingeniería de procesos, eliminación de burocracia y mejora de la estructura.</p></div></div>
-    <div class="le-card le-2"><div class="le-num">2</div><div class="le-content"><h4>Transformación Digital y Gobierno Abierto</h4><p>Tecnología al servicio del vecino (Ventanilla Única, Chatbot) y transparencia de datos.</p></div></div>
-    <div class="le-card le-3"><div class="le-num">3</div><div class="le-content"><h4>Vínculo Ciudadano y Co-Creación</h4><p>Del control punitivo a la construcción conjunta (Mesas de Trabajo, Gestión Barrial).</p></div></div>
-    <div class="le-card le-4"><div class="le-num">4</div><div class="le-content"><h4>Cultura Interna de Innovación y Aprendizaje</h4><p>Desarrollo del Capital Humano. Equipo empoderado con sentido de pertenencia.</p></div></div>
-  </div>
-</div>
-
-<div class="stats-row">
-  <div class="stat-card"><div class="stat-num" id="statTotal">0</div><div class="stat-label">Metas registradas</div></div>
-  <div class="stat-card"><div class="stat-num" id="statAreas">0</div><div class="stat-label">Áreas con metas</div></div>
-  <div class="stat-card"><div class="stat-num" id="statPoliticas">0</div><div class="stat-label">Políticas públicas</div></div>
-  <div class="stat-card"><div class="stat-num" id="statLE">0</div><div class="stat-label">Lineamientos cubiertos</div></div>
-</div>
-
-<hr class="div">
-
-<div class="form-section">
-  <div class="section-label">Cargar planificación por área</div>
-  <div class="area-chips" id="areaChips">
-    <div class="area-chip active" data-area="agc" onclick="selectArea('agc')"><span>🏛️</span> AGC — Dirección</div>
-    <div class="area-chip" data-area="ig" onclick="selectArea('ig')"><span>🔍</span> Inspección General</div>
-    <div class="area-chip" data-area="hab" onclick="selectArea('hab')"><span>📄</span> Habilitaciones</div>
-    <div class="area-chip" data-area="assal" onclick="selectArea('assal')"><span>🛡️</span> ASSAL</div>
-    <div class="area-chip" data-area="med" onclick="selectArea('med')"><span>🤝</span> Mediación Comunitaria</div>
-  </div>
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-title">Nueva política — <span id="formAreaTitle">AGC · Dirección</span></div>
-        <div class="card-sub">Completá todos los campos. Podés agregar hasta 3 metas por política.</div>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Lineamiento estratégico</label>
-        <select class="form-control" id="inputLE">
-          <option value="">— Seleccioná —</option>
-          <option value="1">1 · Modernización Interna y Fortalecimiento Institucional</option>
-          <option value="2">2 · Transformación Digital y Gobierno Abierto</option>
-          <option value="3">3 · Vínculo Ciudadano y Co-Creación</option>
-          <option value="4">4 · Cultura Interna de Innovación y Aprendizaje</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Nivel de política</label>
-        <select class="form-control" id="inputNivel">
-          <option value="PROGRAMA">PROGRAMA</option>
-          <option value="PLAN">PLAN</option>
-          <option value="PROYECTO">PROYECTO</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group"><label class="form-label">Nombre de la política pública</label><input type="text" class="form-control" id="inputPolitica" placeholder="Ej.: Programa Municipal de Fortalecimiento del Cuerpo de Inspectores de la AGCP"></div>
-    <div class="form-group"><label class="form-label">Objetivo general (2026–2027)</label><textarea class="form-control" id="inputObjetivo" rows="3" placeholder="¿Qué propósito se propone alcanzar con esta política en los dos años de gestión restantes?"></textarea></div>
-    <div class="form-group"><label class="form-label">Línea de base</label><textarea class="form-control" id="inputLineaBase" rows="2" placeholder="Situación actual, datos de contexto o punto de partida (opcional)"></textarea></div>
-    <div class="form-group">
-      <label class="form-label">Metas 2026 (hasta 3)</label>
-      <textarea class="form-control" id="inputMeta1" rows="2" placeholder="Meta 1 — enunciada en infinitivo con temporalidad y cuantificación" style="margin-bottom:8px;"></textarea>
-      <textarea class="form-control" id="inputMeta2" rows="2" placeholder="Meta 2 (opcional)" style="margin-bottom:8px;"></textarea>
-      <textarea class="form-control" id="inputMeta3" rows="2" placeholder="Meta 3 (opcional)"></textarea>
-    </div>
-    <div class="btn-group">
-      <button class="btn btn-primary" onclick="agregarPolitica()">✅ Agregar política y metas</button>
-      <button class="btn btn-ghost" onclick="limpiarForm()">🔄 Limpiar</button>
-    </div>
-  </div>
-  <div class="info-box"><strong>📌 Recordatorio:</strong> Cada política puede tener hasta <strong>3 metas</strong>. Las metas deben ser cuantificadas o cualificadas, enunciadas en infinitivo e incluir temporalidad explícita. La planificación debe enviarse a <strong>controlpublico@reconquista.gov.ar</strong> antes del 24/03/2026.</div>
-</div>
-
-<hr class="div">
-
-<div class="metas-section">
-  <div class="metas-header">
-    <div class="section-label" style="margin:0">Políticas y metas registradas</div>
-    <div class="metas-count" id="metasCount"></div>
-  </div>
-  <div class="filter-bar">
-    <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">Todas</button>
-    <button class="filter-btn" data-filter="agc" onclick="setFilter('agc')">🏛️ AGC</button>
-    <button class="filter-btn" data-filter="ig" onclick="setFilter('ig')">🔍 Insp. General</button>
-    <button class="filter-btn" data-filter="hab" onclick="setFilter('hab')">📄 Habilitaciones</button>
-    <button class="filter-btn" data-filter="assal" onclick="setFilter('assal')">🛡️ ASSAL</button>
-    <button class="filter-btn" data-filter="med" onclick="setFilter('med')">🤝 Mediación</button>
-  </div>
-  <div id="politicasList"></div>
-</div>
-
-</div><!-- /container -->
-
-<div class="page-footer">
-  <div class="footer-logos">
-    <img src="https://res.cloudinary.com/dthg9wo6r/image/upload/v1767976370/escudomunicipal_rgt6cf.png" alt="Municipalidad de Reconquista">
-    <img src="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866260/logoagc_jkb5my.jpg" alt="AGC" style="border-radius:6px;">
-    <img src="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866183/Sec-Control-Publico_zxjbag.png" alt="Secretaría de Control Público">
-  </div>
-  <div class="footer-text">
-    Municipalidad de Reconquista · Secretaría de Control Público · Agencia Gubernamental de Control Público<br>
-    <a href="https://claude.ai" target="_blank">POWERED BY CLAUDE · Anthropic AI</a>
-  </div>
-</div>
-
-<!-- MODAL COMPARTIR -->
-<div class="modal-overlay" id="socialModal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('socialModal')">×</button>
-    <h3>📤 Compartir en redes sociales</h3>
-    <div class="modal-sub">Seleccioná la plataforma para compartir la planificación de metas 2026.</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-      <button class="btn btn-ghost" style="justify-content:center;" onclick="compartirEn('whatsapp')">💬 WhatsApp</button>
-      <button class="btn btn-ghost" style="justify-content:center;" onclick="compartirEn('twitter')">🐦 Twitter / X</button>
-      <button class="btn btn-ghost" style="justify-content:center;" onclick="compartirEn('linkedin')">💼 LinkedIn</button>
-      <button class="btn btn-ghost" style="justify-content:center;" onclick="compartirEn('facebook')">📘 Facebook</button>
-    </div>
-    <div style="margin-top:12px;"><button class="btn btn-ghost btn-sm" onclick="closeModal('socialModal')">Cerrar</button></div>
-  </div>
-</div>
-
-<!-- MODAL EDITAR -->
-<div class="edit-modal-overlay" id="editModal">
-  <div class="edit-modal">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
-      <div style="font-size:14px;font-weight:700;">✏️ Editar política y metas</div>
-      <button class="modal-close" style="float:none;" onclick="closeModal('editModal')">×</button>
-    </div>
-    <div class="form-row" style="margin-bottom:12px;">
-      <div class="form-group" style="margin:0;"><label class="form-label">Lineamiento</label>
-        <select class="form-control" id="editLE">
-          <option value="1">1 · Modernización Interna y Fortalecimiento Institucional</option>
-          <option value="2">2 · Transformación Digital y Gobierno Abierto</option>
-          <option value="3">3 · Vínculo Ciudadano y Co-Creación</option>
-          <option value="4">4 · Cultura Interna de Innovación y Aprendizaje</option>
-        </select>
-      </div>
-      <div class="form-group" style="margin:0;"><label class="form-label">Nivel</label>
-        <select class="form-control" id="editNivel">
-          <option value="PROGRAMA">PROGRAMA</option>
-          <option value="PLAN">PLAN</option>
-          <option value="PROYECTO">PROYECTO</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group"><label class="form-label">Política pública</label><input type="text" class="form-control" id="editPolitica"></div>
-    <div class="form-group"><label class="form-label">Objetivo</label><textarea class="form-control" id="editObjetivo" rows="3"></textarea></div>
-    <div class="form-group"><label class="form-label">Línea de base</label><textarea class="form-control" id="editLineaBase" rows="2"></textarea></div>
-    <label class="form-label">Metas 2026</label>
-    <textarea class="form-control" id="editMeta1" rows="2" style="margin-bottom:7px;" placeholder="Meta 1"></textarea>
-    <textarea class="form-control" id="editMeta2" rows="2" style="margin-bottom:7px;" placeholder="Meta 2 (opcional)"></textarea>
-    <textarea class="form-control" id="editMeta3" rows="2" placeholder="Meta 3 (opcional)"></textarea>
-    <div class="btn-group" style="margin-top:14px;">
-      <button class="btn btn-primary" onclick="guardarEdicion()">💾 Guardar cambios</button>
-      <button class="btn btn-ghost" onclick="closeModal('editModal')">Cancelar</button>
-    </div>
-  </div>
-</div>
-
-<script>
-const AREAS={agc:{name:'Dcción. Agcia. Gub. de Control',short:'AGC · Dirección',icon:'🏛️'},ig:{name:'Inspección General',short:'Inspección General',icon:'🔍'},hab:{name:'Habilitaciones',short:'Habilitaciones',icon:'📄'},assal:{name:'ASSAL',short:'ASSAL',icon:'🛡️'},med:{name:'Mediación Comunitaria',short:'Mediación Comunitaria',icon:'🤝'}};
-const LE_NAMES={'1':'Modernización Interna y Fortalecimiento Institucional','2':'Transformación Digital y Gobierno Abierto','3':'Vínculo Ciudadano y Co-Creación','4':'Cultura Interna de Innovación y Aprendizaje'};
-
-const DEFAULT=[
-  {area:'agc',le:'4',nivel:'PROGRAMA',
-   politica:'Programa Municipal de Fortalecimiento del Cuerpo de Inspectores de la AGCP',
-   objetivo:'Fortalecer las capacidades técnicas, normativas y procedimentales del cuerpo de inspectores municipales — en las áreas de habilitaciones comerciales, seguridad alimentaria e inspección general — mediante un programa de capacitación continua que acompañe la ampliación de las facultades de poder de policía otorgadas por la reforma de la Ley Orgánica de Municipios, garantizando intervenciones legítimas, eficaces y articuladas con la mediación comunitaria, durante el 2026 y 2027.',
-   lineaBase:'Inspección General: 34 — ASSAL: 6 — Habilitaciones: 2 — Parquímetro: 4 — Tránsito: xx',
-   metas:['El 100% del personal inspector completará el Programa de Capacitación Continua durante el 2026.']},
-
-  {area:'agc',le:'3',nivel:'PROGRAMA',
-   politica:'PROGRAMA: Higiene y saneamiento de los espacios Urbanos',
-   objetivo:'Reducir los riesgos sanitarios y mejorar la calidad del espacio urbano mediante la intervención sistemática, preventiva y articulada sobre baldíos y lotes sin uso, a través de programas de desmalezamiento que eliminen focos de proliferación de vectores, acumulación de residuos y deterioro del entorno barrial, promoviendo una ciudad más saludable, segura e inclusiva, durante el 2026 y 2027.',
-   lineaBase:'21.000 lotes baldíos en todo el ejido. Anualmente se relevan entre 1.000 y 1.200 en estado de falta de higiene.',
-   metas:['Desmalezar un mínimo de 800 baldíos durante el 2026, priorizando sectores de alta densidad poblacional y zonas de riesgo sanitario.']},
-
-  {area:'agc',le:'2',nivel:'PROGRAMA',
-   politica:'PROGRAMA: Digitalización y Transparencia de Gestión de Control',
-   objetivo:'Desarrollar e implementar un Sistema Integrado de Gestión y Transparencia (SIGT) que garantice la trazabilidad completa, la transparencia activa y la eficiencia operativa de los procesos de control municipal en las actividades de la Agencia, asegurando el acceso público diferenciado a la información de gestión durante el período 2026–2027.',
-   lineaBase:'Actualmente se cuenta con los siguientes microsistemas cerrados (non-sql): 1. Sistema de seguimiento de control de baldíos. 2. Panel de Control o de Tareas (en desarrollo para su alojamiento en hosting on-line). 3. Mediación Comunitaria: Seguimiento de Expedientes de mediación. 4. Administración: Seguimiento de actas de infracción y estado de los mismos.',
-   metas:['Implementar el módulo central del SIGT que articule todos los microsistemas, conservando la identidad y lógica propia de cada uno durante el segundo semestre del 2026.','Publicar en el portal municipal la versión pública del SIGT, garantizando el acceso abierto e irrestricto a la ciudadanía, durante Noviembre de 2026.']},
-
-  {area:'agc',le:'4',nivel:'PROGRAMA',
-   politica:'Programa de Anticipación Institucional ante Escenarios Críticos — Sala de Escenarios Críticos y Anticipación de Riesgos',
-   objetivo:'Desarrollar una capacidad institucional sostenida de anticipación y análisis de escenarios críticos de alta complejidad en el ámbito de actuación de la Agencia, mediante la simulación sistemática de situaciones extremas o de baja probabilidad que puedan comprometer la operatividad municipal, el orden público o la seguridad urbana, con el fin de reducir la improvisación, fortalecer la toma de decisiones y construir una cultura organizacional orientada a la prevención y la resiliencia, durante el período 2026–2027.',
-   lineaBase:'',
-   metas:[
-     'Realizar 4 jornadas de simulación en la Sala de Escenarios Críticos durante el 2026, sobre los casos del catálogo, con participación obligatoria de los jefes de área. Cada jornada considerará la presentación del escenario, análisis en grupos, identificación de decisiones críticas, debate de respuestas posibles y registro de conclusiones.',
-     'Elaborar al menos 5 protocolos preliminares de actuación interna derivados directamente de los análisis realizados, con foco exclusivo en el rol de la AGC. Cada protocolo debe especificar: activador del protocolo, acciones inmediatas del personal, cadena de comunicación interna, decisiones que no deben tomarse sin autorización superior y registro del evento.',
-     'Iniciar, a fines del 2026, negociaciones formales de coordinación con otros organismos de seguridad y emergencia, respaldada por protocolos propios consolidados y un conocimiento preciso de su rol, sus límites y sus necesidades ante escenarios críticos.']},
-
-  {area:'agc',le:'2',nivel:'PLAN',
-   politica:'PLAN de Gestión Inteligente y Despapelización Integral. (SISTEMA DE JUZGAMIENTO DE FALTAS CORRESPONDIENTES A LA AGC)',
-   objetivo:'Transformar el actual sistema de registro de expedientes en un Procedimiento Administrativo Digital de Extremo a Extremo (E2E). El objetivo es que la gestión de infracciones, desde la labranza del acta en vía pública hasta la ejecución de la sentencia o cobro, nazca, circule y se archive de forma electrónica, eliminando el soporte físico y garantizando la interoperabilidad con los sistemas de recaudación.',
-   lineaBase:'Sistema "Espejo": No es un expediente digital, sino un registro de carga manual de lo que ya sucedió en papel. Capacidad Limitada: Solo genera dos tipos de documentos (cédulas y resoluciones). Inexistencia de Adjuntos: Imposibilidad de vincular evidencia digital (fotos, audios, actas escaneadas). Fragmentación Financiera: El sistema de registro no "habla" con el sistema de cobros, generando baches en la información de pagos.',
-   metas:[
-     'FASE 1 — Cimientos y Acta Digital (plazo: 8 meses). Meta 1: Desarrollo o implementación del Módulo de Acta Digital. Los inspectores dejan de usar talonarios físicos y utilizan dispositivos móviles para cargar actas que impactan en tiempo real. Meta 2: Habilitación de la Carga de Multimedia. Modificación del sistema para permitir adjuntar archivos (fotos de la infracción, pruebas) que actúen como prueba documental del expediente.',
-     'FASE 2 — El Flujo Electrónico (Meta 2027). Meta 3: Implementación del Workflow Digital. El expediente deja de ser un registro manual y pasa a ser un flujo de tareas. Meta 4: Automatización de Plantillas (Preformateado): biblioteca de resoluciones y dictámenes preconfigurados que tomen los datos del acta automáticamente, reduciendo el error humano y los tiempos de redacción en un 60%. Meta 5: Firma Digital/Electrónica. Integración de firma con validez legal para todos los agentes y funcionarios intervinientes.',
-     'FASE 3 — Interoperabilidad y Cierre de Ciclo (finales de 2026 / 2027). Meta 6: Conexión con el Sistema de Cobro. Sincronización vía API entre el sistema de la AGC y el sistema financiero del municipio. Meta 7: Notificación Electrónica y Domicilio Vial Digital. Implementación de notificaciones vía e-mail o app que tengan la misma validez que la cédula de citación en papel.']},
-
-  {area:'agc',le:'3',nivel:'PROGRAMA',
-   politica:'PROGRAMA: Difusión de actividades AGC INSPECCIÓN HABILITACIONES',
-   objetivo:'Crear una página web en la cual se informarán hechos y/o actividades relevantes de interés público a efectos de poner en conocimiento de la comunidad las diferentes intervenciones que se realizan por parte de los organismos AGC, INSPECCIÓN y HABILITACIONES y crear conciencia en la comunidad que existe control sobre uso de espacios públicos, actividades comerciales, obras, servicios y todo lo vinculado a las áreas mencionadas. Ej. Se interviene en espacio público reubicando vendedores ambulantes que realizan su actividad en espacio público no habilitado. Ej. 2: "Se retienen 7 caballos sueltos en la vía pública en inmediaciones de...".',
-   lineaBase:'No tenemos actualmente un canal de comunicación nativo propio.',
-   metas:[
-     'Crear la página web, formato noticias, sencilla, secuencial, durante el 2026.',
-     'Publicar un mínimo de dos noticias por semana que sean de relevancia e interés público, de manera sostenida durante el 2026.']}
-];
-
-let politicas=[], currentArea='agc', currentFilter='all', editingIndex=-1;
-
-function init(){
-  const s=localStorage.getItem('agc_plan_v5');
-  politicas=s?JSON.parse(s):[...DEFAULT];
-  if(!s)save();
-  updateCountdown();render();updateStats();
-  const th=localStorage.getItem('agc_theme');
-  if(th==='dark'){document.body.setAttribute('data-theme','dark');document.getElementById('themeBtn').innerHTML='☀️ <span class="label">Tema</span>';}
-}
-function save(){localStorage.setItem('agc_plan_v5',JSON.stringify(politicas));}
-function selectArea(a){currentArea=a;document.querySelectorAll('.area-chip').forEach(c=>c.classList.toggle('active',c.dataset.area===a));document.getElementById('formAreaTitle').textContent=AREAS[a].short;limpiarForm();}
-function setFilter(f){currentFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter===f));render();}
-
-function agregarPolitica(){
-  const le=document.getElementById('inputLE').value,nivel=document.getElementById('inputNivel').value;
-  const politica=document.getElementById('inputPolitica').value.trim();
-  const objetivo=document.getElementById('inputObjetivo').value.trim();
-  const lineaBase=document.getElementById('inputLineaBase').value.trim();
-  const m1=document.getElementById('inputMeta1').value.trim(),m2=document.getElementById('inputMeta2').value.trim(),m3=document.getElementById('inputMeta3').value.trim();
-  if(!le||!politica||!objetivo||!m1){alert('Completá lineamiento, política, objetivo y al menos la primera meta.');return;}
-  politicas.push({area:currentArea,le,nivel,politica,objetivo,lineaBase,metas:[m1,m2,m3].filter(Boolean)});
-  save();limpiarForm();render();updateStats();
-}
-function limpiarForm(){
-  ['inputLE','inputNivel'].forEach(id=>{const e=document.getElementById(id);e.value=e.options[0].value;});
-  ['inputPolitica','inputObjetivo','inputLineaBase','inputMeta1','inputMeta2','inputMeta3'].forEach(id=>document.getElementById(id).value='');
-}
-function deletePolitica(i){if(confirm('¿Eliminar esta política y todas sus metas?')){politicas.splice(i,1);save();render();updateStats();}}
-function openEditModal(i){
-  editingIndex=i;const p=politicas[i];
-  document.getElementById('editLE').value=p.le;
-  document.getElementById('editNivel').value=p.nivel;
-  document.getElementById('editPolitica').value=p.politica;
-  document.getElementById('editObjetivo').value=p.objetivo;
-  document.getElementById('editLineaBase').value=p.lineaBase||'';
-  document.getElementById('editMeta1').value=p.metas[0]||'';
-  document.getElementById('editMeta2').value=p.metas[1]||'';
-  document.getElementById('editMeta3').value=p.metas[2]||'';
-  document.getElementById('editModal').classList.add('open');
-}
-function guardarEdicion(){
-  const p=politicas[editingIndex];
-  p.le=document.getElementById('editLE').value;p.nivel=document.getElementById('editNivel').value;
-  p.politica=document.getElementById('editPolitica').value.trim();
-  p.objetivo=document.getElementById('editObjetivo').value.trim();
-  p.lineaBase=document.getElementById('editLineaBase').value.trim();
-  p.metas=[document.getElementById('editMeta1').value.trim(),document.getElementById('editMeta2').value.trim(),document.getElementById('editMeta3').value.trim()].filter(Boolean);
-  save();render();updateStats();closeModal('editModal');
-}
-
-const LE_CLS={'1':'le-badge-1','2':'le-badge-2','3':'le-badge-3','4':'le-badge-4'};
-const AREA_C={agc:'#0c8a6e',ig:'#2563eb',hab:'#7c3aed',assal:'#ea580c',med:'#0891b2'};
-
-function render(){
-  const filtered=currentFilter==='all'?politicas:politicas.filter(p=>p.area===currentFilter);
-  const totalM=filtered.reduce((s,p)=>s+p.metas.length,0);
-  document.getElementById('metasCount').textContent=`${filtered.length} política${filtered.length!==1?'s':''} · ${totalM} meta${totalM!==1?'s':''}`;
-  const list=document.getElementById('politicasList');
-  if(!filtered.length){list.innerHTML='<div class="empty-state"><div class="icon">📭</div><p>No hay políticas registradas para esta vista.</p></div>';return;}
-  const byArea={};
-  filtered.forEach((p,origIdx)=>{if(!byArea[p.area])byArea[p.area]=[];byArea[p.area].push({...p,origIdx});});
-  let html='';
-  for(const[area,items]of Object.entries(byArea)){
-    const a=AREAS[area];
-    html+=`<div style="margin-top:20px;margin-bottom:4px;"><div style="font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:${AREA_C[area]};display:flex;align-items:center;gap:6px;margin-bottom:10px;"><span>${a.icon}</span>${a.name}</div>`;
-    items.forEach(p=>{
-      html+=`<div class="politica-block">
-        <div class="politica-header">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;"><div class="politica-name">${p.politica}</div><div class="meta-actions-wrap"><button class="btn btn-ghost btn-sm" onclick="openEditModal(${p.origIdx})">✏️</button><button class="btn btn-danger btn-sm" onclick="deletePolitica(${p.origIdx})">🗑️</button></div></div>
-          <div class="politica-meta-row"><span class="le-badge ${LE_CLS[p.le]}">LE${p.le} · ${LE_NAMES[p.le]}</span><span class="nivel-badge nivel-${p.nivel}">${p.nivel}</span></div>
-          <div class="politica-objetivo"><strong>🎯 Objetivo general 2026–2027</strong>${p.objetivo}</div>
-          ${p.lineaBase?`<div class="linea-base"><strong>📊 Línea de base</strong>${p.lineaBase}</div>`:''}
+    <!-- Pantalla de Intro (Preloader) -->
+    <div id="intro-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-vino-900 transition-opacity duration-1000 ease-in-out">
+        <div class="relative">
+            <!-- Efecto de resplandor detrás del logo -->
+            <div class="absolute -inset-4 bg-vino-500 rounded-full blur-xl opacity-50 animate-pulse-slow"></div>
+            <img src="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866260/logoagc_jkb5my.jpg" alt="Logo AGC" class="relative w-32 h-32 object-cover rounded-full shadow-2xl border-2 border-vino-400">
         </div>
-        <div class="metas-list">${p.metas.map((m,i)=>`<div class="meta-item"><div class="meta-num">${i+1}</div><div class="meta-text"><strong>Meta ${i+1} · 2026</strong>${m}</div></div>`).join('')}</div>
-      </div>`;
-    });
-    html+='</div>';
-  }
-  list.innerHTML=html;
-}
-
-function updateStats(){
-  document.getElementById('statTotal').textContent=politicas.reduce((s,p)=>s+p.metas.length,0);
-  document.getElementById('statAreas').textContent=new Set(politicas.map(p=>p.area)).size;
-  document.getElementById('statPoliticas').textContent=politicas.length;
-  document.getElementById('statLE').textContent=new Set(politicas.map(p=>p.le)).size;
-}
-
-function updateCountdown(){
-  const diff=new Date('2026-03-24T23:59:59')-new Date();
-  const el=document.getElementById('countdown');if(!el)return;
-  if(diff<=0){el.textContent='⚠️ VENCIDO';el.style.color='#fca5a5';}
-  else{const d=Math.floor(diff/86400000);el.textContent=d>0?`${d}d`:` ${Math.floor((diff%86400000)/3600000)}h`;}
-}
-
-function toggleTheme(){
-  const dark=document.body.getAttribute('data-theme')==='dark';
-  document.body.setAttribute('data-theme',dark?'':'dark');
-  document.getElementById('themeBtn').innerHTML=(dark?'🌙':'☀️')+' <span class="label">Tema</span>';
-  localStorage.setItem('agc_theme',dark?'light':'dark');
-}
-
-function closeModal(id){document.getElementById(id).classList.remove('open');}
-document.querySelectorAll('.modal-overlay,.edit-modal-overlay').forEach(el=>el.addEventListener('click',e=>{if(e.target===el)el.classList.remove('open');}));
-
-function compartirEn(red){
-  const url=encodeURIComponent(window.location.href);
-  const txt=encodeURIComponent('📋 Planificación de Metas 2026 — Agencia Gubernamental de Control Público · Municipalidad de Reconquista');
-  const links={whatsapp:`https://wa.me/?text=${txt}%20${url}`,twitter:`https://twitter.com/intent/tweet?text=${txt}&url=${url}`,linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`,facebook:`https://www.facebook.com/sharer/sharer.php?u=${url}`};
-  window.open(links[red],'_blank');closeModal('socialModal');
-}
-
-function exportarHTML(){
-  const blob=new Blob([document.documentElement.outerHTML],{type:'text/html;charset=utf-8'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='planificacion_metas_2026_AGC.html';a.click();
-}
-
-function exportarPDF(){
-  const LE_PDF={
-    '1':{bg:'#eff6ff',border:'#2563eb',text:'#1e40af'},
-    '2':{bg:'#f5f3ff',border:'#7c3aed',text:'#5b21b6'},
-    '3':{bg:'#fff7ed',border:'#ea580c',text:'#9a3412'},
-    '4':{bg:'#ecfeff',border:'#0891b2',text:'#0e7490'}
-  };
-  const NV_C={PROGRAMA:'#0c8a6e',PLAN:'#2563eb',PROYECTO:'#7c3aed'};
-
-  let pHTML='';
-  politicas.forEach(p=>{
-    const lc=LE_PDF[p.le]||LE_PDF['1'];
-    const nc=NV_C[p.nivel]||'#666';
-    const metasH=p.metas.map((m,i)=>`
-      <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;">
-        <div style="min-width:26px;height:26px;border-radius:50%;background:#e8f6f1;color:#076b55;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${i+1}</div>
-        <div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#0c8a6e;margin-bottom:3px;">Meta ${i+1} · 2026</div><div style="font-size:13.5px;color:#1a1d24;line-height:1.7;">${m}</div></div>
-      </div>`).join('');
-    const lbH=p.lineaBase?`<div style="background:#f5f3ff;border-left:3px solid #7c3aed;border-radius:0 6px 6px 0;padding:10px 14px;margin-top:8px;">
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#7c3aed;margin-bottom:4px;">📊 Línea de base</div>
-        <div style="font-size:13px;color:#374151;line-height:1.65;">${p.lineaBase}</div></div>`:'';
-
-    pHTML+=`
-    <div style="break-inside:avoid;page-break-inside:avoid;margin-bottom:26px;border:1px solid #e1e5eb;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-      <div style="background:${lc.bg};border-bottom:2px solid ${lc.border};padding:18px 22px 15px;">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:10px;">
-          <div style="font-size:15.5px;font-weight:700;color:#1a1d24;line-height:1.35;flex:1;">${p.politica}</div>
-          <div style="font-size:11px;font-weight:700;color:#fff;background:${nc};padding:4px 11px;border-radius:5px;white-space:nowrap;flex-shrink:0;">${p.nivel}</div>
+        <h1 class="mt-8 text-2xl md:text-3xl font-light tracking-[0.2em] text-white/90 uppercase text-center">
+            Iniciando<br><span class="text-sm font-bold text-vino-400 tracking-widest mt-2 block">Portal de Sistemas</span>
+        </h1>
+        <!-- Barra de carga simple -->
+        <div class="w-48 h-1 bg-vino-800 rounded-full mt-6 overflow-hidden">
+            <div class="h-full bg-vino-400 rounded-full w-full origin-left animate-[scaleX_1.5s_ease-in-out_forwards]"></div>
         </div>
-        <div style="display:inline-flex;align-items:center;background:${lc.border}33;color:${lc.text};border:1px solid ${lc.border};border-radius:5px;padding:3px 10px;font-size:11px;font-weight:700;">LE${p.le} · ${LE_NAMES[p.le]}</div>
-        <div style="background:rgba(255,255,255,.78);border-radius:6px;padding:11px 14px;margin-top:10px;">
-          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#6b7280;margin-bottom:4px;">🎯 Objetivo general 2026–2027</div>
-          <div style="font-size:13.5px;color:#374151;line-height:1.7;">${p.objetivo}</div>
-        </div>
-        ${lbH}
-      </div>
-      <div style="padding:16px 22px 13px;background:#fff;">${metasH}</div>
-    </div>`;
-  });
-
-  const totalMetas=politicas.reduce((s,p)=>s+p.metas.length,0);
-  const statsH=['Metas registradas|'+totalMetas,'Áreas con metas|'+new Set(politicas.map(p=>p.area)).size,'Políticas públicas|'+politicas.length,'Lineamientos cubiertos|'+new Set(politicas.map(p=>p.le)).size].map(s=>{
-    const[label,val]=s.split('|');
-    return `<div style="background:#f0f2f5;border:1px solid #e1e5eb;border-radius:10px;padding:14px;text-align:center;"><div style="font-size:30px;font-weight:700;color:#0c8a6e;font-family:'DM Serif Display',serif;">${val}</div><div style="font-size:12px;color:#5f6b7a;margin-top:3px;">${label}</div></div>`;
-  }).join('');
-
-  const html=`<!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><title>Planificación de Metas 2026 · AGC</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'DM Sans',sans-serif;color:#1a1d24;background:#fff;font-size:14px;}
-@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.no-print{display:none!important;}@page{margin:16mm 14mm;size:A4;}}
-</style></head><body>
-
-<div style="background:linear-gradient(135deg,#0f4c3a 0%,#0c8a6e 65%,#10b98e 100%);padding:40px;margin-bottom:28px;position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;opacity:.05;background-image:url('data:image/svg+xml,%3Csvg width=60 height=60 viewBox=0 0 60 60 xmlns=http://www.w3.org/2000/svg%3E%3Cpath d=M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z fill=%23fff/%3E%3C/svg%3E');"></div>
-  <div style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;">
-    <div style="flex:1;">
-      <div style="background:rgba(255,255,255,.15);color:#e0faf3;border:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;padding:3px 12px;border-radius:20px;font-size:11px;font-weight:600;margin-bottom:12px;">📋 Planificación Estratégica 2026</div>
-      <div style="font-family:'DM Serif Display',serif;color:#fff;font-size:30px;line-height:1.2;margin-bottom:10px;">Metas Anuales 2026</div>
-      <div style="color:rgba(255,255,255,.85);font-size:13px;margin-bottom:16px;">Agencia Gubernamental de Control Público · Secretaría de Control Público<br>Municipalidad de Reconquista, Santa Fe</div>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;">
-        <div style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:5px 14px;border-radius:7px;color:#fff;font-size:11.5px;">⏰ Entrega: <strong>24 de marzo de 2026</strong></div>
-        <div style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:5px 14px;border-radius:7px;color:#fff;font-size:11.5px;">📧 controlpublico@reconquista.gov.ar</div>
-      </div>
     </div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-      <img src="https://res.cloudinary.com/dthg9wo6r/image/upload/v1767976370/escudomunicipal_rgt6cf.png" style="height:58px;filter:brightness(0) invert(1);opacity:.85;">
-      <img src="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866260/logoagc_jkb5my.jpg" style="height:42px;border-radius:7px;">
+
+    <!-- Canvas para efecto de fondo -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Contenido Principal -->
+    <div id="main-content" class="min-h-screen flex flex-col relative z-10 hidden">
+        
+        <!-- Encabezado -->
+        <header class="glass-header sticky top-0 z-40 px-4 py-3 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+                <!-- Identidad AGC -->
+                <div class="flex items-center gap-3">
+                    <img src="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866260/logoagc_jkb5my.jpg" alt="Logo AGC" class="w-12 h-12 rounded-full border border-vino-600 shadow-lg">
+                    <div>
+                        <h2 class="text-lg font-bold text-white leading-tight">Agencia Gubernamental</h2>
+                        <p class="text-sm text-vino-400 font-medium">de Control</p>
+                    </div>
+                </div>
+                <!-- Banner Secretaría -->
+                <div class="bg-white/5 px-3 py-2 rounded-lg backdrop-blur-sm border border-white/10 hidden md:block">
+                    <img src="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866183/Sec-Control-Publico_zxjbag.png" alt="Secretaría de Control Público" class="h-10 object-contain drop-shadow-md brightness-110 contrast-125">
+                </div>
+            </div>
+        </header>
+
+        <!-- Área Central / Menú -->
+        <main class="flex-grow flex flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-12 max-w-2xl mx-auto">
+                <!-- Banner móvil (visible solo en pantallas chicas) -->
+                <div class="md:hidden flex justify-center mb-6 bg-white/5 p-3 rounded-xl">
+                    <img src="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866183/Sec-Control-Publico_zxjbag.png" alt="Secretaría de Control Público" class="h-12 object-contain brightness-110">
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 drop-shadow-lg">
+                    Portal de <span class="text-transparent bg-clip-text bg-gradient-to-r from-vino-400 to-red-300">Sistemas Internos</span>
+                </h1>
+                <p class="text-lg text-gray-300 font-light">
+                    Seleccione el módulo al que desea ingresar. Acceso exclusivo para personal autorizado de la AGC.
+                </p>
+            </div>
+
+            <!-- Grid de Tarjetas de Sistemas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl mx-auto">
+                
+                <!-- Tarjeta 1: Sistema de Reuniones -->
+                <a href="https://panelagc.page.gd/agc-reuniones/index.php" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center group cursor-pointer relative overflow-hidden text-decoration-none">
+                    <!-- Decoración fondo tarjeta -->
+                    <div class="absolute -right-10 -top-10 w-32 h-32 bg-vino-500 rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    
+                    <div class="w-20 h-20 bg-vino-800/80 rounded-2xl flex items-center justify-center mb-6 border border-vino-600/50 group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                        <!-- Ícono SVG (Reuniones/Minutas) -->
+                        <svg class="w-10 h-10 text-vino-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Gestión de Reuniones</h3>
+                    <p class="text-gray-300 mb-6 flex-grow">
+                        Sistema para el registro de reuniones, generación automática de minutas, asignación de tareas y seguimiento de objetivos.
+                    </p>
+                    <span class="inline-flex items-center gap-2 text-vino-400 font-semibold group-hover:text-white transition-colors">
+                        Ingresar al Sistema
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Tarjeta 2: Panel de Tareas -->
+                <a href="https://panelagc.page.gd/agc-panel-php/index.php" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center group cursor-pointer relative overflow-hidden text-decoration-none">
+                    <!-- Decoración fondo tarjeta -->
+                    <div class="absolute -left-10 -bottom-10 w-32 h-32 bg-vino-500 rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    
+                    <div class="w-20 h-20 bg-vino-800/80 rounded-2xl flex items-center justify-center mb-6 border border-vino-600/50 group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                        <!-- Ícono SVG (Tareas/Checklist) -->
+                        <svg class="w-10 h-10 text-vino-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Panel de Tareas</h3>
+                    <p class="text-gray-300 mb-6 flex-grow">
+                        Tablero central para la creación, asignación y seguimiento del estado de las tareas operativas e inspecciones.
+                    </p>
+                    <span class="inline-flex items-center gap-2 text-vino-400 font-semibold group-hover:text-white transition-colors">
+                        Ingresar al Panel
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </span>
+                </a>
+
+            </div>
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="mt-auto py-6 text-center text-sm text-gray-500 relative z-20 bg-black/20 backdrop-blur-sm border-t border-white/5">
+            <p>
+                &copy; <span id="year"></span> Agencia Gubernamental de Control. <br class="sm:hidden">Municipalidad de Reconquista.
+            </p>
+        </footer>
+
     </div>
-  </div>
-</div>
 
-<div style="padding:0 40px;margin-bottom:24px;">
-  <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9aa5b4;margin-bottom:10px;">Lineamientos Estratégicos 2026–2027</div>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
-    <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:11px 13px;"><div style="width:22px;height:22px;border-radius:5px;background:#2563eb;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:5px;">1</div><div style="font-size:11.5px;font-weight:700;color:#1e40af;line-height:1.4;">Modernización Interna y Fortalecimiento Institucional</div></div>
-    <div style="background:#f5f3ff;border:1px solid #ddd6fe;border-radius:8px;padding:11px 13px;"><div style="width:22px;height:22px;border-radius:5px;background:#7c3aed;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:5px;">2</div><div style="font-size:11.5px;font-weight:700;color:#5b21b6;line-height:1.4;">Transformación Digital y Gobierno Abierto</div></div>
-    <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:11px 13px;"><div style="width:22px;height:22px;border-radius:5px;background:#ea580c;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:5px;">3</div><div style="font-size:11.5px;font-weight:700;color:#9a3412;line-height:1.4;">Vínculo Ciudadano y Co-Creación</div></div>
-    <div style="background:#ecfeff;border:1px solid #a5f3fc;border-radius:8px;padding:11px 13px;"><div style="width:22px;height:22px;border-radius:5px;background:#0891b2;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:5px;">4</div><div style="font-size:11.5px;font-weight:700;color:#0e7490;line-height:1.4;">Cultura Interna de Innovación y Aprendizaje</div></div>
-  </div>
-</div>
+    <!-- Script de lógicas, intro y canvas animado -->
+    <script>
+        // Actualizar año del footer
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-<div style="padding:0 40px;margin-bottom:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
-  ${statsH}
-</div>
+        // Lógica de Intro Liviana
+        window.addEventListener('load', () => {
+            const introScreen = document.getElementById('intro-screen');
+            const mainContent = document.getElementById('main-content');
+            
+            // Esperar 1.5 segundos para mostrar la intro, luego desvanecer
+            setTimeout(() => {
+                introScreen.style.opacity = '0';
+                
+                setTimeout(() => {
+                    introScreen.style.display = 'none';
+                    mainContent.classList.remove('hidden');
+                    // Pequeño delay para que aplique el CSS transition en main-content
+                    setTimeout(() => {
+                        mainContent.style.opacity = '1';
+                        initCanvasParticles(); // Iniciar partículas solo cuando sea visible
+                    }, 50);
+                }, 1000); // tiempo de transición CSS
+                
+            }, 1500); // Tiempo de la intro
+        });
 
-<div style="padding:0 40px;margin-bottom:20px;border-top:2px solid rgba(12,138,110,.25);padding-top:20px;">
-  <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9aa5b4;margin-bottom:16px;">🏛️ Dirección — Agencia Gubernamental de Control Público (AGC)</div>
-  ${pHTML}
-</div>
+        // Lógica del Canvas (Partículas fluidas interactivas estilo "constelación" lenta)
+        function initCanvasParticles() {
+            const canvas = document.getElementById('bg-canvas');
+            const ctx = canvas.getContext('2d');
+            let particlesArray;
 
-<div style="padding:20px 40px 18px;margin-top:10px;border-top:1px solid #e1e5eb;display:flex;align-items:center;justify-content:space-between;">
-  <div style="display:flex;align-items:center;gap:14px;">
-    <img src="https://res.cloudinary.com/dthg9wo6r/image/upload/v1767976370/escudomunicipal_rgt6cf.png" style="height:30px;opacity:.55;">
-    <img src="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866183/Sec-Control-Publico_zxjbag.png" style="height:26px;opacity:.55;">
-  </div>
-  <div style="font-size:10px;color:#9aa5b4;text-align:right;line-height:1.7;">Municipalidad de Reconquista · Secretaría de Control Público<br>POWERED BY CLAUDE · Anthropic AI</div>
-</div>
+            // Ajustar tamaño del canvas
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
 
-<script class="no-print">window.onload=()=>window.print();<\/script>
-</body></html>`;
+            // Manejar redimensionamiento de ventana
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                initParticles();
+            });
 
-  const win=window.open('','_blank');
-  win.document.write(html);win.document.close();
-}
+            // Interacción con el mouse
+            let mouse = { x: null, y: null, radius: 150 }
+            window.addEventListener('mousemove', (event) => {
+                mouse.x = event.x;
+                mouse.y = event.y;
+            });
+            window.addEventListener('mouseout', () => {
+                mouse.x = undefined;
+                mouse.y = undefined;
+            });
+
+            // Clase Partícula
+            class Particle {
+                constructor(x, y, directionX, directionY, size, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.directionX = directionX;
+                    this.directionY = directionY;
+                    this.size = size;
+                    this.color = color;
+                }
+                
+                // Dibujar
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+
+                // Mover
+                update() {
+                    // Rebotar en bordes
+                    if (this.x > canvas.width || this.x < 0) {
+                        this.directionX = -this.directionX;
+                    }
+                    if (this.y > canvas.height || this.y < 0) {
+                        this.directionY = -this.directionY;
+                    }
+
+                    // Interacción sutil con el mouse
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius + this.size) {
+                        if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
+                            this.x += 1;
+                        }
+                        if (mouse.x > this.x && this.x > this.size * 10) {
+                            this.x -= 1;
+                        }
+                        if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
+                            this.y += 1;
+                        }
+                        if (mouse.y > this.y && this.y > this.size * 10) {
+                            this.y -= 1;
+                        }
+                    }
+                    
+                    this.x += this.directionX;
+                    this.y += this.directionY;
+                    this.draw();
+                }
+            }
+
+            // Crear array de partículas
+            function initParticles() {
+                particlesArray = [];
+                // Menos partículas para mantenerlo liviano (aprox 1 por cada 10000 px)
+                let numberOfParticles = (canvas.height * canvas.width) / 12000;
+                for (let i = 0; i < numberOfParticles; i++) {
+                    let size = (Math.random() * 2) + 1;
+                    let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                    let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                    let directionX = (Math.random() * 0.4) - 0.2; // Muy lento
+                    let directionY = (Math.random() * 0.4) - 0.2;
+                    let color = '#a34a58'; // Color vino claro
+
+                    particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+                }
+            }
+
+            // Conectar partículas con líneas
+            function connect() {
+                let opacityValue = 1;
+                for (let a = 0; a < particlesArray.length; a++) {
+                    for (let b = a; b < particlesArray.length; b++) {
+                        let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                            + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                        
+                        if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                            opacityValue = 1 - (distance / 15000);
+                            // Líneas color vino
+                            ctx.strokeStyle = 'rgba(163, 74, 88, ' + opacityValue * 0.2 + ')';
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            // Bucle de animación
+            function animate() {
+                requestAnimationFrame(animate);
+                ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+                for (let i = 0; i < particlesArray.length; i++) {
+                    particlesArray[i].update();
+                }
+                connect();
+            }
+
+            initParticles();
+            animate();
+        }
+    </script>
+</body>
+</html>
 
 init();
 </script>
