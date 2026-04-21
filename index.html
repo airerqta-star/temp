@@ -6,7 +6,7 @@
     
     <!-- Metadatos para Redes Sociales (Open Graph) -->
     <meta property="og:title" content="Portal de Sistemas | Agencia Gubernamental de Control">
-    <meta property="og:description" content="Panel o menú principal de sistemas de la Agencia Gubernamental de Control para uso interno. Gestión de reuniones, minutas y tareas.">
+    <meta property="og:description" content="Panel o menú principal de sistemas de la Agencia Gubernamental de Control para uso interno. Gestión de reuniones, minutas, tareas y eventos.">
     <meta property="og:image" content="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866260/logoagc_jkb5my.jpg">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_AR">
@@ -32,9 +32,6 @@
                             800: '#420d15',
                             900: '#2a050a',
                         }
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     }
                 }
             }
@@ -44,7 +41,7 @@
     <style>
         /* Estilos personalizados para efectos Glassmorphism y scroll */
         body {
-            background-color: #1a0508; /* Fondo base muy oscuro */
+            background-color: #1a0508;
             color: #ffffff;
             overflow-x: hidden;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -98,7 +95,6 @@
             pointer-events: none;
         }
 
-        /* Animación de entrada principal */
         #main-content {
             opacity: 0;
             transition: opacity 1.5s ease-in-out;
@@ -107,20 +103,9 @@
 </head>
 <body class="antialiased selection:bg-vino-500 selection:text-white">
 
-    <!-- Pantalla de Intro (Preloader) -->
-    <div id="intro-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-vino-900 transition-opacity duration-1000 ease-in-out">
-        <div class="relative">
-            <!-- Efecto de resplandor detrás del logo -->
-            <div class="absolute -inset-4 bg-vino-500 rounded-full blur-xl opacity-50 animate-pulse-slow"></div>
-            <img src="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866260/logoagc_jkb5my.jpg" alt="Logo AGC" class="relative w-32 h-32 object-cover rounded-full shadow-2xl border-2 border-vino-400">
-        </div>
-        <h1 class="mt-8 text-2xl md:text-3xl font-light tracking-[0.2em] text-white/90 uppercase text-center">
-            Iniciando<br><span class="text-sm font-bold text-vino-400 tracking-widest mt-2 block">Portal de Sistemas</span>
-        </h1>
-        <!-- Barra de carga simple -->
-        <div class="w-48 h-1 bg-vino-800 rounded-full mt-6 overflow-hidden">
-            <div class="h-full bg-vino-400 rounded-full w-full origin-left animate-[scaleX_1.5s_ease-in-out_forwards]"></div>
-        </div>
+    <!-- Pantalla de Intro Full Screen -->
+    <div id="intro-screen" class="fixed inset-0 z-50 bg-[#050102] transition-opacity duration-1000 ease-in-out">
+        <canvas id="intro-loader-canvas" class="absolute inset-0 w-full h-full"></canvas>
     </div>
 
     <!-- Canvas para efecto de fondo -->
@@ -151,7 +136,7 @@
         <main class="flex-grow flex flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
             
             <div class="text-center mb-12 max-w-2xl mx-auto">
-                <!-- Banner móvil (visible solo en pantallas chicas) -->
+                <!-- Banner móvil -->
                 <div class="md:hidden flex justify-center mb-6 bg-white/5 p-3 rounded-xl">
                     <img src="https://res.cloudinary.com/dthg9wo6r/image/upload/v1763866183/Sec-Control-Publico_zxjbag.png" alt="Secretaría de Control Público" class="h-12 object-contain brightness-110">
                 </div>
@@ -164,26 +149,24 @@
                 </p>
             </div>
 
-            <!-- Grid de Tarjetas de Sistemas -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl mx-auto">
+            <!-- Grid de Tarjetas de Sistemas (Actualizado a 3 columnas) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mx-auto">
                 
                 <!-- Tarjeta 1: Sistema de Reuniones -->
                 <a href="https://panelagc.page.gd/agc-reuniones/index.php" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center group cursor-pointer relative overflow-hidden text-decoration-none">
-                    <!-- Decoración fondo tarjeta -->
                     <div class="absolute -right-10 -top-10 w-32 h-32 bg-vino-500 rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
                     
                     <div class="w-20 h-20 bg-vino-800/80 rounded-2xl flex items-center justify-center mb-6 border border-vino-600/50 group-hover:scale-110 transition-transform duration-300 shadow-inner">
-                        <!-- Ícono SVG (Reuniones/Minutas) -->
                         <svg class="w-10 h-10 text-vino-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                         </svg>
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-3">Gestión de Reuniones</h3>
                     <p class="text-gray-300 mb-6 flex-grow">
-                        Sistema para el registro de reuniones, generación automática de minutas, asignación de tareas y seguimiento de objetivos.
+                        Sistema para el registro de reuniones, generación de minutas, asignación de tareas y seguimiento de objetivos.
                     </p>
                     <span class="inline-flex items-center gap-2 text-vino-400 font-semibold group-hover:text-white transition-colors">
-                        Ingresar al Sistema
+                        Ingresar 
                         <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                         </svg>
@@ -192,21 +175,40 @@
 
                 <!-- Tarjeta 2: Panel de Tareas -->
                 <a href="https://panelagc.page.gd/agc-panel-php/index.php" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center group cursor-pointer relative overflow-hidden text-decoration-none">
-                    <!-- Decoración fondo tarjeta -->
                     <div class="absolute -left-10 -bottom-10 w-32 h-32 bg-vino-500 rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
                     
                     <div class="w-20 h-20 bg-vino-800/80 rounded-2xl flex items-center justify-center mb-6 border border-vino-600/50 group-hover:scale-110 transition-transform duration-300 shadow-inner">
-                        <!-- Ícono SVG (Tareas/Checklist) -->
                         <svg class="w-10 h-10 text-vino-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
                         </svg>
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-3">Panel de Tareas</h3>
                     <p class="text-gray-300 mb-6 flex-grow">
-                        Tablero central para la creación, asignación y seguimiento del estado de las tareas operativas e inspecciones.
+                        Tablero central para la creación, asignación y seguimiento del estado de tareas operativas e inspecciones.
                     </p>
                     <span class="inline-flex items-center gap-2 text-vino-400 font-semibold group-hover:text-white transition-colors">
-                        Ingresar al Panel
+                        Ingresar 
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Tarjeta 3: Eventos AGC -->
+                <a href="https://panelagc.page.gd/eventos_agc/index.php" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center group cursor-pointer relative overflow-hidden text-decoration-none">
+                    <div class="absolute -right-10 bottom-10 w-32 h-32 bg-vino-500 rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    
+                    <div class="w-20 h-20 bg-vino-800/80 rounded-2xl flex items-center justify-center mb-6 border border-vino-600/50 group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                        <svg class="w-10 h-10 text-vino-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Eventos AGC</h3>
+                    <p class="text-gray-300 mb-6 flex-grow">
+                        Gestión y calendario de eventos. Sistema de planificación, autorizaciones y control de actividades.
+                    </p>
+                    <span class="inline-flex items-center gap-2 text-vino-400 font-semibold group-hover:text-white transition-colors">
+                        Ingresar 
                         <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                         </svg>
@@ -216,7 +218,6 @@
             </div>
         </main>
 
-        <!-- Pie de página -->
         <footer class="mt-auto py-6 text-center text-sm text-gray-500 relative z-20 bg-black/20 backdrop-blur-sm border-t border-white/5">
             <p>
                 &copy; <span id="year"></span> Agencia Gubernamental de Control. <br class="sm:hidden">Municipalidad de Reconquista.
@@ -225,51 +226,169 @@
 
     </div>
 
-    <!-- Script de lógicas, intro y canvas animado -->
     <script>
-        // Actualizar año del footer
         document.getElementById('year').textContent = new Date().getFullYear();
+        let stopIntroCanvas = () => {};
 
-        // Lógica de Intro Liviana
         window.addEventListener('load', () => {
+            stopIntroCanvas = startIntroLoader(transitionToMain);
+        });
+
+        function transitionToMain() {
             const introScreen = document.getElementById('intro-screen');
             const mainContent = document.getElementById('main-content');
             
-            // Esperar 1.5 segundos para mostrar la intro, luego desvanecer
+            introScreen.style.opacity = '0';
             setTimeout(() => {
-                introScreen.style.opacity = '0';
-                
+                introScreen.style.display = 'none';
+                mainContent.classList.remove('hidden');
                 setTimeout(() => {
-                    introScreen.style.display = 'none';
-                    mainContent.classList.remove('hidden');
-                    // Pequeño delay para que aplique el CSS transition en main-content
-                    setTimeout(() => {
-                        mainContent.style.opacity = '1';
-                        initCanvasParticles(); // Iniciar partículas solo cuando sea visible
-                    }, 50);
-                }, 1000); // tiempo de transición CSS
-                
-            }, 1500); // Tiempo de la intro
-        });
+                    mainContent.style.opacity = '1';
+                    initCanvasParticles();
+                    stopIntroCanvas(); 
+                }, 50);
+            }, 1000); 
+        }
 
-        // Lógica del Canvas (Partículas fluidas interactivas estilo "constelación" lenta)
+        // --- ANIMACIÓN 3D METÁLICA (LETRAS VOLADORAS) ---
+        function startIntroLoader(onComplete) {
+            const canvas = document.getElementById('intro-loader-canvas');
+            if (!canvas) return () => {};
+            const ctx = canvas.getContext('2d');
+            let reqId;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            // Configuración de las letras
+            // Inician en posiciones aleatorias fuera del centro con rotaciones locas
+            function createLetters() {
+                const cx = canvas.width / 2;
+                const cy = canvas.height / 2 - 40; // Un poco más arriba para dejar espacio a BIENVENIDOS
+                const gap = Math.min(canvas.width * 0.25, 180); // Espacio entre letras responsivo
+                
+                return [
+                    { char: 'A', tx: cx - gap, ty: cy, x: Math.random() * canvas.width, y: -200, rot: Math.random() * 5, trot: 0 },
+                    { char: 'G', tx: cx,       ty: cy, x: Math.random() * canvas.width, y: canvas.height + 200, rot: Math.random() * 5, trot: 0 },
+                    { char: 'C', tx: cx + gap, ty: cy, x: -200, y: Math.random() * canvas.height, rot: Math.random() * 5, trot: 0 }
+                ];
+            }
+
+            let letters = createLetters();
+            let frameCount = 0;
+            let durationFly = 100; // frames que tardan en volar
+            let durationWelcome = 80; // frames para que aparezca BIENVENIDOS
+            let alphaWelcome = 0;
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                frameCount++;
+
+                let t = Math.min(frameCount / durationFly, 1);
+                // Función de suavizado (Ease Out Quart) para un frenado elegante
+                let ease = 1 - Math.pow(1 - t, 4);
+
+                // Dibujar Letras en 3D
+                // Ajustar tamaño de fuente según pantalla
+                const fontSize = Math.min(canvas.width * 0.25, 200); 
+                ctx.font = `900 italic ${fontSize}px "Segoe UI", Arial, sans-serif`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+
+                letters.forEach(L => {
+                    // Interpolar posición y rotación
+                    let currentX = L.x + (L.tx - L.x) * ease;
+                    let currentY = L.y + (L.ty - L.y) * ease;
+                    let currentRot = L.rot + (L.trot - L.rot) * ease;
+
+                    ctx.save();
+                    ctx.translate(currentX, currentY);
+                    ctx.rotate(currentRot);
+
+                    // 1. Dibujar Extrusión 3D (Profundidad)
+                    // Dibujamos la letra varias veces desplazada hacia abajo/derecha
+                    const depth = 20; 
+                    for (let i = depth; i >= 1; i--) {
+                        // Sombra oscura rojiza para la profundidad
+                        ctx.fillStyle = `rgba(42, 5, 10, ${1 - (i/depth)*0.5})`; 
+                        ctx.fillText(L.char, -i * 1.5, i * 1.5);
+                    }
+
+                    // 2. Dibujar Cara Frontal Metálica
+                    // Gradiente que simula metal / cromo con tonos del logo AGC
+                    let gradient = ctx.createLinearGradient(0, -fontSize/2, 0, fontSize/2);
+                    gradient.addColorStop(0, '#ffffff'); // Brillo superior
+                    gradient.addColorStop(0.3, '#a34a58'); // Color base
+                    gradient.addColorStop(0.5, '#420d15'); // Sombra central (corte metálico)
+                    gradient.addColorStop(0.6, '#a34a58'); // Reflejo inferior
+                    gradient.addColorStop(1, '#ffb8c4'); // Rebote de luz
+
+                    ctx.fillStyle = gradient;
+                    // Borde sutil
+                    ctx.strokeStyle = '#ffffff';
+                    ctx.lineWidth = 2;
+                    ctx.fillText(L.char, 0, 0);
+                    ctx.strokeText(L.char, 0, 0);
+
+                    // Pequeño resplandor
+                    if(ease > 0.9) {
+                        ctx.shadowColor = '#a34a58';
+                        ctx.shadowBlur = (ease - 0.9) * 10 * 30; // Crece al final
+                    }
+                    ctx.restore();
+                });
+
+                // Fase 2: Mostrar "BIENVENIDOS"
+                if (frameCount > durationFly + 10) {
+                    alphaWelcome += 0.02;
+                    if (alphaWelcome > 1) alphaWelcome = 1;
+
+                    ctx.save();
+                    const welcomeY = canvas.height / 2 + fontSize * 0.6;
+                    ctx.font = `bold ${Math.min(canvas.width * 0.05, 30)}px "Segoe UI", Arial, sans-serif`;
+                    ctx.textAlign = 'center';
+                    ctx.fillStyle = `rgba(255, 255, 255, ${alphaWelcome})`;
+                    ctx.letterSpacing = "10px"; // Requiere navegadores modernos, fallback manual si no
+                    ctx.shadowColor = '#a34a58';
+                    ctx.shadowBlur = 10;
+                    ctx.fillText('BIENVENIDOS', canvas.width / 2, welcomeY);
+                    ctx.restore();
+                }
+
+                // Finalizar animación y transicionar
+                if (frameCount > durationFly + durationWelcome + 60) {
+                    onComplete();
+                } else {
+                    reqId = requestAnimationFrame(animate);
+                }
+            }
+            animate();
+            
+            return () => {
+                cancelAnimationFrame(reqId);
+                window.removeEventListener('resize', resize);
+            };
+        }
+
+        // --- ANIMACIÓN DE FONDO (PARTÍCULAS) ---
         function initCanvasParticles() {
             const canvas = document.getElementById('bg-canvas');
             const ctx = canvas.getContext('2d');
             let particlesArray;
 
-            // Ajustar tamaño del canvas
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
 
-            // Manejar redimensionamiento de ventana
             window.addEventListener('resize', () => {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
                 initParticles();
             });
 
-            // Interacción con el mouse
             let mouse = { x: null, y: null, radius: 150 }
             window.addEventListener('mousemove', (event) => {
                 mouse.x = event.x;
@@ -280,7 +399,6 @@
                 mouse.y = undefined;
             });
 
-            // Clase Partícula
             class Particle {
                 constructor(x, y, directionX, directionY, size, color) {
                     this.x = x;
@@ -290,42 +408,24 @@
                     this.size = size;
                     this.color = color;
                 }
-                
-                // Dibujar
                 draw() {
                     ctx.beginPath();
                     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
                     ctx.fillStyle = this.color;
                     ctx.fill();
                 }
-
-                // Mover
                 update() {
-                    // Rebotar en bordes
-                    if (this.x > canvas.width || this.x < 0) {
-                        this.directionX = -this.directionX;
-                    }
-                    if (this.y > canvas.height || this.y < 0) {
-                        this.directionY = -this.directionY;
-                    }
+                    if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+                    if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
 
-                    // Interacción sutil con el mouse
                     let dx = mouse.x - this.x;
                     let dy = mouse.y - this.y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
                     if (distance < mouse.radius + this.size) {
-                        if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
-                            this.x += 1;
-                        }
-                        if (mouse.x > this.x && this.x > this.size * 10) {
-                            this.x -= 1;
-                        }
-                        if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
-                            this.y += 1;
-                        }
-                        if (mouse.y > this.y && this.y > this.size * 10) {
-                            this.y -= 1;
-                        }
+                        if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 1;
+                        if (mouse.x > this.x && this.x > this.size * 10) this.x -= 1;
+                        if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 1;
+                        if (mouse.y > this.y && this.y > this.size * 10) this.y -= 1;
                     }
                     
                     this.x += this.directionX;
@@ -334,24 +434,21 @@
                 }
             }
 
-            // Crear array de partículas
             function initParticles() {
                 particlesArray = [];
-                // Menos partículas para mantenerlo liviano (aprox 1 por cada 10000 px)
                 let numberOfParticles = (canvas.height * canvas.width) / 12000;
                 for (let i = 0; i < numberOfParticles; i++) {
                     let size = (Math.random() * 2) + 1;
                     let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
                     let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-                    let directionX = (Math.random() * 0.4) - 0.2; // Muy lento
+                    let directionX = (Math.random() * 0.4) - 0.2;
                     let directionY = (Math.random() * 0.4) - 0.2;
-                    let color = '#a34a58'; // Color vino claro
+                    let color = '#a34a58';
 
                     particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
                 }
             }
 
-            // Conectar partículas con líneas
             function connect() {
                 let opacityValue = 1;
                 for (let a = 0; a < particlesArray.length; a++) {
@@ -361,7 +458,6 @@
                         
                         if (distance < (canvas.width / 7) * (canvas.height / 7)) {
                             opacityValue = 1 - (distance / 15000);
-                            // Líneas color vino
                             ctx.strokeStyle = 'rgba(163, 74, 88, ' + opacityValue * 0.2 + ')';
                             ctx.lineWidth = 1;
                             ctx.beginPath();
@@ -373,11 +469,9 @@
                 }
             }
 
-            // Bucle de animación
             function animate() {
                 requestAnimationFrame(animate);
                 ctx.clearRect(0, 0, innerWidth, innerHeight);
-
                 for (let i = 0; i < particlesArray.length; i++) {
                     particlesArray[i].update();
                 }
@@ -388,10 +482,5 @@
             animate();
         }
     </script>
-</body>
-</html>
-
-init();
-</script>
 </body>
 </html>
